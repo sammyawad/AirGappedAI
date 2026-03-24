@@ -1,0 +1,46 @@
+## .NET / C# gitignore
+
+# Build output
+bin/
+obj/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# Test results
+TestResults/
+coverage*/
+*.coverage
+*.coveragexml
+*.trx
+
+# Publish output
+publish/
+out/
+
+# Environment / secrets  — never commit these
+.env
+.env.*
+appsettings.Production.json
+appsettings.Secrets.json
+
+# OS noise
+.DS_Store
+Thumbs.db
