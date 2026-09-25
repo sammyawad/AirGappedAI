@@ -22,7 +22,7 @@ The AI build-out created a memory shortage (DRAM, NAND, HBM), and it has pushed 
 **What this means for the business**
 1. **Make hardware a thin-margin pass-through and put your margin in the subscription and services.** Hardware margin is volatile. Recurring revenue isn't.
 2. **Quotes valid for 7–14 days**, with a hardware price-adjustment clause in every proposal.
-3. **Collect a hardware deposit on order** (50–100%), so price swings and lead times never sit on your balance sheet.
+3. **Get hardware paid in full on order** (at minimum, a deposit covering your cost), so price swings and lead times never sit on your balance sheet.
 4. **Buy from channels that show stock** (retail, distributor, and builder stock), not only from OEM build-to-order.
 5. **Once deal flow is steady, keep 1–2 units of the most common tier in inventory.** Faster installs are a selling point.
 
@@ -35,7 +35,7 @@ The AI build-out created a memory shortage (DRAM, NAND, HBM), and it has pushed 
 | Team size (pricing tier) | 5–20 users | 20–75 users | 75–300 users |
 | Core hardware | 1× GB10 desktop (ASUS Ascent GX10 or NVIDIA DGX Spark), 128 GB unified memory | Workstation with **1× RTX PRO 6000** (96 GB), 128 GB RAM | Tower with **2× RTX PRO 6000 Max-Q** (192 GB GPU memory), Threadripper PRO, 256 GB ECC RAM |
 | Reference price | $3,999–4,699 | ~$19,600 (Dell Pro Max T2 configuration) | ~$50–60k (GPUs alone $32–36k) |
-| All-in cost (with UPS, backup, and networking) | **~$5,500** | **~$22,500** | **~$58,000** |
+| All-in cost (with UPS, backup, and networking) | **~$5,500** | **~$22,300** | **~$58,000** |
 | Simultaneous users (short requests) | ~4–8 | ~50 | ~100 |
 | Simultaneous long-document jobs (32K tokens) | 1–3 | 6–10 | 15–20 |
 | Total staff served | 10–40 | 50–150 | 100–300 |
@@ -54,10 +54,10 @@ Capacity figures are from published benchmarks (a single RTX PRO 6000 served **5
 
 | Option | Verdict |
 |---|---|
-| **Mac Studio (M5 Ultra, from $5,499; 256 GB ≈ $11,299)** | Quiet and capable for one user or a very small team. For shared serving, a DGX Spark running vLLM finished a batch **3.8× faster** than an M3 Ultra running llama.cpp ([Skorppio](https://skorppio.com/blog/dgx-spark-vs-mac-studio-efficiency-benchmark)). Fine for a solo practitioner; not the default. |
-| **AMD Strix Halo mini-PCs ($3,449–4,349, 128 GB)** | Cheap, but AMD's GPU software (ROCm) is less mature, and only ~96 GB is usable by the GPU on Linux. Possible budget tier later. |
-| **RTX 5090 ($4,300–6,800 street)** | NVIDIA's GeForce driver license says it's "not licensed for datacenter deployment" and never defines the term ([NVIDIA](https://www.nvidia.com/en-us/drivers/geforce-license/)). Don't put consumer cards in client server rooms. Use RTX PRO. |
-| **H100 / H200 / B200** | Datacenter GPUs at $25k–55k each. Overkill and loud. |
+| **Mac Studio (M5 Ultra, from $5,499; 256 GB ≈ $11,299 per [Engadget](https://www.engadget.com/2263184/apple-mac-studio-m5-ultra-review/))** | Quiet and capable for one user or a very small team. For shared serving, a DGX Spark running vLLM finished a batch **3.8× faster** than an M3 Ultra running llama.cpp ([Skorppio](https://skorppio.com/blog/dgx-spark-vs-mac-studio-efficiency-benchmark)). Fine for a solo practitioner; not the default. |
+| **AMD Strix Halo mini-PCs ($3,449–4,349, 128 GB, per [ComputingForGeeks](https://computingforgeeks.com/ryzen-ai-max-395-mini-pc-comparison/))** | Cheap, but AMD's GPU software (ROCm) is less mature, and only ~96 GB is usable by the GPU on Linux. Possible budget tier later. |
+| **RTX 5090 ($4,300–6,800 street, per [videocardprices](https://videocardprices.com/card/nvidia-rtx-5090/))** | NVIDIA's GeForce driver license says it's "not licensed for datacenter deployment" and never defines the term ([NVIDIA](https://www.nvidia.com/en-us/drivers/geforce-license/)). Don't put consumer cards in client server rooms. Use RTX PRO. |
+| **H100 / H200 / B200** | Datacenter GPUs at roughly $25k–55k each ([GPUSmith](https://gpusmith.com/articles/en/nvidia-ai-gpu-price-index-trends), [Thunder Compute](https://www.thundercompute.com/blog/nvidia-b200-pricing)). Overkill and loud. |
 
 ---
 
@@ -110,21 +110,21 @@ All three expose an OpenAI-compatible API. That's why the repo's `ILocalAiProvid
 ## 4. What runs on the box
 
 ```
-                     ┌─────────────────────────── Client LAN ───────────────────────────┐
-  Staff browsers ──► │  Reverse proxy (TLS, client's internal CA)                        │
-                     │     │                                                             │
-                     │     ▼                                                             │
-                     │  Web app (.NET)  ◄──► Postgres + pgvector (app data, vectors,     │
-                     │   - upload, review queue, chat     audit log)                     │
-                     │   - LDAP/AD login, roles, matter permissions                      │
-                     │     │                                                             │
-                     │     ├──► OCR worker (PaddleOCR-VL / Docling)                      │
-                     │     ├──► Embedding service (Qwen3-Embedding)                      │
-                     │     └──► Inference server (vLLM/SGLang) ── LLM weights on disk    │
-                     │                                                                   │
-                     │  Host: Ubuntu LTS, full-disk encryption, Secure Boot,             │
-                     │        default-deny egress firewall                               │
-                     └───────────────────────── no route to the internet ───────────────┘
+                     ┌──────────────────────────── Client LAN ────────────────────────────┐
+  Staff browsers ──► │  Reverse proxy (TLS, client's internal CA)                         │
+                     │     │                                                              │
+                     │     ▼                                                              │
+                     │  Web app (.NET)  ◄──► Postgres + pgvector (app data, vectors,      │
+                     │   - upload, review queue, chat     audit log)                      │
+                     │   - LDAP/AD login, roles, matter permissions                       │
+                     │     │                                                              │
+                     │     ├──► OCR worker (PaddleOCR-VL / Docling)                       │
+                     │     ├──► Embedding service (Qwen3-Embedding)                       │
+                     │     └──► Inference server (vLLM/SGLang) ── LLM weights on disk     │
+                     │                                                                    │
+                     │  Host: Ubuntu LTS, full-disk encryption, Secure Boot,              │
+                     │        default-deny egress firewall                                │
+                     └────────────────── no internet access by default ───────────────────┘
 ```
 
 ### Two connectivity modes
@@ -153,7 +153,7 @@ Both modes run identically day to day. Only updates and support differ.
 | 9. Acceptance | Client signs | 1 hr | Checklist: works offline, logins work, workflows produce expected output on 3 sample documents, audit log records activity |
 | 10. Hypercare | You | 2–4 weeks | Weekly check-in; fix friction; capture first time-savings numbers for the case study |
 
-Typical elapsed time is **2–3 weeks when hardware is in stock**, and 6–10 weeks otherwise. Your labor per install is ~20 hours (Practice), ~40 hours (Firm), ~100 hours (Enterprise). Those are the planning assumptions in the financial model.
+Typical elapsed time is **2–3 weeks when hardware is in stock**, and 6–10 weeks when a builder or distributor has short lead times. Waiting on OEM build-to-order GPU systems can take months (32–52 weeks were quoted in 2026), which is why you buy from in-stock channels (§1). Your labor per install is ~20 hours (Practice), ~40 hours (Firm), ~100 hours (Enterprise). Those are the planning assumptions in the financial model.
 
 ---
 

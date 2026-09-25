@@ -14,7 +14,7 @@
 | **D. On-prem vendors (direct competitors)** | Iternal AirgapAI (laptop), Zanus AI and eRacks (appliances), Dell AI Factory, Nutanix, H2O.ai, Cohere North, Zylon (enterprise platforms) | $697/user to $500k+ | On-prem or air-gapped | High in positioning, low in execution for our niche (below) |
 | **E. MSPs selling "private AI"** | Petronella Technology Group, Lean Command, OpenClawInstall, local MSPs | $8k–35k hardware + $149–599/user/month managed | On-prem | **Partner or competitor.** They own the client relationship. |
 
-**Where we fit:** a *managed* on-prem appliance with *finished vertical workflows* for firms of 5–150 people. That sits between laptop apps that run small models and enterprise platforms that need an IT department to operate.
+**Where we fit:** a *managed* on-prem appliance with *finished vertical workflows* for teams of 5–300 users, starting with 10–150-attorney firms. That sits between laptop apps that run small models and enterprise platforms that need an IT department to operate.
 
 ---
 
@@ -28,9 +28,9 @@
 | Price | **$35/month or $697 perpetual per user**; $1,499 with the Blockify add-on ([iternal.ai](https://iternal.ai/airgapai)) |
 | Channel | **Dell partnership**: sold as the Dell-exclusive "AI Assist" bundle through Dell Services and partners, featured at CES 2026 ([iternal.ai](https://iternal.ai/ai-assist)); also Intel and Carahsoft (public sector) |
 | Target | **Same verticals as us.** It has a law-firm page citing ABA Opinion 512 ([iternal.ai](https://iternal.ai/ai-for-law-firms)), plus healthcare and finance pages. |
-| Weakness | Each laptop runs its own small model: no shared document base, limited reasoning on long records, and no central admin, audit trail, or matter permissions |
+| Limits | Each laptop runs its own small model (1B–9B class, per its product page), so work on long records is limited to what a laptop can run. Ask how it handles a shared document base, firm-wide administration, and audit trails; those aren't described on its public pages. |
 
-**Our angle against it:** "A laptop can run a 3B model. Your 900-page medical record needs a 70B-class model with a long context window, a shared, permissioned document base, and an audit trail. That needs a server."
+**Our angle against it:** "A laptop can run a 3B model. A 900-page medical record needs a much larger long-context model working through the record in chunks, a shared, permissioned document base, and an audit trail. That needs a server."
 
 **The name problem:** "AirgapAI" and "AirGappedAI" are nearly identical, for the same product type, sold to the same buyers. See [07](07-risks-and-compliance.md#1-the-name). **Rename before any public launch.**
 
@@ -54,11 +54,11 @@ These prove **the category exists and buyers pay for it**. Most sell a generic c
 | OpenClawInstall | Private AI agents for law firms | **$149 / $299 / $599 per user/month** | [openclawinstall](https://www.openclawinstall.ai/blog/legal-ai-pricing-2026-what-law-firms-pay/) |
 | ValueStream AI | Medical-practice AI builds | $20k–90k year one (mid-tier); $60k–200k custom for 10 physicians | [valuestreamai](https://valuestreamai.com/blog/ai-cost-medical-practice-2026) |
 
-**Implication:** MSPs are building do-it-yourself stacks (Ollama + Open WebUI) and are hitting its limits: Open WebUI's branding clause above 50 users, no offline update pipeline, and no vertical workflows. **A white-label kit for MSPs is a better business than competing with them.** See the channel section of [05](05-go-to-market.md#7-channels-that-borrow-trust).
+**Implication:** MSPs are packaging do-it-yourself stacks (eRacks, for example, ships Ollama + Open WebUI). Those stacks have known limits: Open WebUI's branding clause above 50 users, no offline update pipeline, and no vertical workflows. **A white-label kit for MSPs is a better business than competing with them.** See the channel section of [05](05-go-to-market.md#7-channels-that-borrow-trust).
 
 ### Enterprise private-AI platforms (not our fight)
 
-Dell AI Factory (no list prices; 5,000+ customers), Nutanix Enterprise AI, HPE Private Cloud AI, Red Hat AI (per-accelerator pricing), H2O.ai h2oGPTe (air-gapped option), Cohere North (priced per model instance), and Zylon/PrivateGPT (air-gapped option). These target enterprises with IT teams and six-figure budgets. A 30-lawyer firm can't operate them. Dell is worth partnering with as a hardware supplier.
+Dell AI Factory (no list prices; 5,000+ customers), Nutanix Enterprise AI, HPE Private Cloud AI, Red Hat AI (per-accelerator pricing), H2O.ai h2oGPTe (air-gapped option), Cohere North (priced per model instance), and Zylon/PrivateGPT (air-gapped option). These are built for enterprises with IT teams and six-figure budgets, which a 30-lawyer firm typically doesn't have. Dell is worth partnering with as a hardware supplier.
 
 ---
 
@@ -135,9 +135,9 @@ Sell to these buyers, and don't waste cycles arguing with the rest:
 3. **Tax return data**: preparers who don't want to manage IRC §7216 disclosure consent or offshore-processing questions for cloud AI.
 4. **Contractual prohibitions**: outside-counsel guidelines, protective orders, or data-use agreements that restrict third-party AI. These are still rare (about 2% of outside-counsel guidelines mention AI), but decisive where they exist.
 5. **Firms whose leadership simply won't allow it.** This is common among senior partners, and it's a legitimate preference, not something to argue with.
-6. **Cost at scale versus per-seat tools**: a flat monthly price with unlimited users beats $200–500 per seat once a firm has 30+ users.
+6. **Cost at scale versus per-seat tools**: a flat monthly price with no per-seat fees beats $200–500 per seat as a firm grows (see [03](03-pricing-and-unit-economics.md#how-the-price-compares) for all-in math).
 7. **Offline or low-connectivity sites**: courtrooms, rural clinics, field offices.
-8. **Litigation-hold and retention control**: logs held by a vendor can become subject to preservation orders in someone else's lawsuit, while logs on the firm's own box follow the firm's own retention policy.
+8. **Retention and legal-hold control**: logs held by any third party can be subject to subpoenas or preservation orders the firm doesn't control, while logs on the firm's own box follow the firm's own retention and legal-hold policy.
 
 The pitch never says "the cloud is unsafe". It says *"for the documents you or your clients won't put in anyone's cloud, here's AI that never leaves the building."*
 
@@ -149,10 +149,10 @@ The pitch never says "the cloud is unsafe". It says *"for the documents you or y
 |---|---|---|
 | "Harvey / CoCounsel does this" | Premium legal AI | "They're excellent for legal research. This is for the confidential files you can't send to their cloud, at a flat price with no seat minimums." |
 | "We have Copilot" | Horizontal cloud AI | "Keep it for email and Word. Use this for claim files, medical records, and client financials." |
-| "AirgapAI is $697 a user" | Laptop AI | "Small models on each laptop, with no shared knowledge, no audit log, and no admin control. Ask it to summarize 900 pages." |
-| "Our IT guy can set up Ollama" | Free DIY | "He can. Then he owns security, patching, model updates, AD integration, audit logs, accuracy testing, and support at 2 a.m. Our subscription costs less than his time." |
+| "AirgapAI is $697 a user" | Laptop AI | "It runs small models on each laptop. Ask how it handles a 900-page record, a shared document base, and a firm-wide audit trail." |
+| "Our IT guy can set up Ollama" | Free DIY | "He can. Then he owns security, patching, model updates, AD integration, audit logs, accuracy testing, and support at 2 a.m. Compare that with what his time costs." |
 | "Our MSP offered a private AI box" | MSP DIY | "Great, let's work with them. We supply the AI layer and workflows; they keep the relationship and margin." |
-| "Zanus is a one-time purchase" | Appliance vendor | "One-time software means no updates. Models improve every quarter. We ship tested upgrades, and you can cancel any year." |
+| "Zanus is a one-time purchase" | Appliance vendor | "Ask what's included after year one: model upgrades, security patches, support. Models improve every quarter. We ship tested upgrades, and you can cancel at renewal." |
 
 ---
 
@@ -166,6 +166,6 @@ The pitch never says "the cloud is unsafe". It says *"for the documents you or y
 | RIA meeting AI (per advisor/month) | $40–80 | $80–130 | $100+ with add-ons |
 | Local AI app (per user) | $0 (Jan, GPT4All, LM Studio) | $149/year (Msty) | $697 perpetual (AirgapAI) |
 | On-prem appliance (one-time) | $8,995 (eRacks) | $8k–35k (MSP ranges) | $19.9k software + $20k–55k server (Zanus) |
-| Managed private AI (recurring) | $149/user/month | $299–599/user/month | $5k–8k/month flat for 200 lawyers (ibl.ai) |
+| Managed or self-hosted private AI (recurring) | ~$25–40/user equivalent (ibl.ai: $5k–8k/month flat for 200 lawyers) | $149–299/user/month (OpenClawInstall) | $599/user/month (OpenClawInstall top tier) |
 
-**Takeaway for our pricing** (details in [03](03-pricing-and-unit-economics.md)): a flat fee equal to **~$57–125 per user per month** puts us well under premium legal AI ($199–500), above generic copilots ($30–60), and at or below managed private-AI offers ($149+). For the chronology workflow, an ROI story based on human review ($2,500–5,000 per case) justifies it easily.
+**Takeaway for our pricing** (details in [03](03-pricing-and-unit-economics.md)): the subscription works out to **~$57–125 per user per month**, or **~$108–200 all-in in year one** once hardware and setup are included. That puts us at the low end of premium legal AI ($199–500) in year one and well below it afterward. We sit above generic copilots ($20–60) and below per-user managed private AI ($149–599), but above large-firm self-hosted platforms like ibl.ai (~$25–40 per user at 200 lawyers), so the Enterprise tier needs a sharper value story or volume pricing. For the chronology workflow, the comparison with human review ($2,500–5,000 per case) is the strongest ROI story.

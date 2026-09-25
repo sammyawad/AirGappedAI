@@ -10,7 +10,7 @@ Professionals in law, healthcare, tax, and finance want AI, but their rules make
 
 **Most of these rules don't actually *prohibit* cloud AI.** Cloud vendors now sign BAAs, promise no training on customer data, and hold FedRAMP authorizations (see [02](02-competition.md#4-the-honest-cloud-counter-argument)). What the rules do is impose **consent, diligence, and oversight burdens** on anything that sends data to a third party.
 
-An appliance in the client's office makes most of those burdens disappear. That's the real value proposition: **not "the cloud is illegal", but "this removes the paperwork, the consent conversations, and the privilege risk."**
+An appliance in the client's office removes the third party from the picture, and most of those burdens shrink with it. That's the real value proposition: **not "the cloud is illegal", but "this cuts the vendor paperwork, avoids the consent conversation, and strengthens your confidentiality position."** It doesn't replace the firm's own duties: an AI policy, training, and supervision.
 
 ### Why now
 
@@ -25,7 +25,7 @@ An appliance in the client's office makes most of those burdens disappear. That'
 
 | Rank by regulatory pull | Segment | Why the pull exists | US count (size band) | Fit with current repo | Verdict |
 |---|---|---|---|---|---|
-| 1 | **Defense contractors** (CUI/ITAR) | The only segment where hard law restricts where AI can run: any cloud touching controlled unclassified information must be FedRAMP Moderate or equivalent, and CMMC Phase 2 starts **Nov 10, 2026** | ~220,000 companies in the defense industrial base | Low (needs new workflows) | **Test**: 10 discovery interviews before building anything |
+| 1 | **Defense contractors** (CUI/ITAR) | The broadest hard-law limits on where AI can run: any cloud touching controlled unclassified information must be FedRAMP Moderate or equivalent, and CMMC Phase 2 starts **Nov 10, 2026**. Narrower limits exist elsewhere, e.g., §7216's offshore SSN rule and Texas's US-storage rule for health records. | ~220,000 companies in the defense industrial base | Low (needs new workflows) | **Test**: 10 discovery interviews before building anything |
 | 2 | **CPA and tax firms** | IRC §7216 makes improper disclosure of return information a crime; the FTC Safeguards Rule treats every tax preparer as a financial institution; there's no IRS safe harbor for AI | 50,885 CPA firms with employees; **15,789 with 5+** | Medium (Financial category; needs tax forms) | **Secondary**: time-boxed pilots for the 2027 tax season |
 | 3 | **Law firms** | ABA 512 consent for self-learning tools; privilege risk after *Heppner*; California SB 574 pending; Florida exempts in-house AI from consent | 156,583 firms with employees; **17,194 with 10–499 employees** | **High** (Legal + Medical extractors) | **Primary beachhead** |
 | 4 | Healthcare | A BAA gives a clear cloud path, but Texas requires US-stored records, Part 2 raises the bar for addiction-treatment records, and breach costs are highest | 132,899 physician offices; 6,100 hospitals; 1,356 health centers | High (Medical extractor) | **Later**: behavioral health, hospital legal/compliance |
@@ -37,12 +37,12 @@ Ranking synthesized from the sources in §3–§7. Counts from Census SUSB 2022 
 ### Why law firms first, even though they rank third on regulatory pull
 
 - **Product fit.** The repo's Legal and Medical extractors combine into the medical-chronology workflow ([06](06-product-roadmap.md)). No other segment gets a sellable workflow that fast.
-- **The pitch is crisp.** "Florida says in-house AI doesn't need client consent. A federal judge says consumer-AI chats aren't privileged. This keeps both problems off your desk."
-- **Decisions are fast at small and mid-size firms.** A managing partner signs, often within 2–8 weeks at small firms (estimate).
+- **The pitch is crisp.** "Florida says AI that doesn't disclose to a third party doesn't need client consent. A federal judge found consumer-AI chats weren't privileged. With a box in your office, there's no third party in the loop." (*Heppner* left open how private or enterprise tools are treated, so say "strengthens your position", not "guarantees privilege".)
+- **Decisions are fast at small firms.** A managing partner signs, often within 2–8 weeks. Mid-size firms take longer, typically 3–9 months with IT and security review (both estimates).
 - **Channels exist.** Legal-focused IT providers, CLE, bar associations, and ILTA's startup exhibit zone ([05](05-go-to-market.md#7-channels-that-borrow-trust)).
 - **Privacy concern is highest at the target size.** 54–56% of lawyers at firms with 10+ attorneys cite data privacy and security as a top AI concern, versus 24% of solos ([ABA 2024 Legal Technology Survey](https://www.lawnext.com/2025/03/aba-tech-survey-finds-growing-adoption-of-ai-in-legal-practice-with-efficiency-gains-as-primary-driver.html)).
 
-**Why CPA firms second:** the strongest regulatory hook of the three verticals the product already covers, and **the timing is now**. Tax season runs January to April 15, so pilots have to be installed by December and selling stops after New Year. CPA.com is also taking applications for its 2027 Startup Accelerator ([CPA.com](https://accelerator.cpa.com/)).
+**Why CPA firms second:** the strongest regulatory hook of the three verticals the product already covers, but **the timing is tight**. Tax season runs January to April 15, so pilots must be installed by mid-December, and the product first needs tax-form (W-2/1099/K-1) extraction. Decide by week 4: if a CPA firm commits as a design partner, build it; if not, restart the CPA track after April 15. CPA.com is also taking applications for its 2027 Startup Accelerator ([CPA.com](https://accelerator.cpa.com/)).
 
 **Why test defense contractors:** strongest pull, and Phase 2 starts in six weeks. But no survey measures their demand for on-prem AI, the workflows differ (security documentation, proposals, technical manuals), and you'd face scrutiny of your own security. Run 10 interviews, attend CS5 (Oct 22–23, 2026, National Harbor), and talk to CMMC consultants (Registered Provider Organizations) before investing.
 
@@ -54,7 +54,7 @@ Ranking synthesized from the sources in §3–§7. Counts from Census SUSB 2022 
 
 The ABA's first formal guidance on generative AI ([ABA](https://www.americanbar.org/news/abanews/aba-news-archives/2024/07/aba-issues-first-ethics-guidance-ai-tools/), [NCBE summary](https://thebarexaminer.ncbex.org/article/fall-2024/generative-artificial-intelligence-tools/)):
 
-- **Confidentiality (Rule 1.6):** lawyers must assess the risk that information is disclosed or accessed. For **self-learning tools, informed client consent is required** before inputting information relating to the representation, and **boilerplate in an engagement letter is "not adequate."**
+- **Confidentiality (Rule 1.6):** lawyers must assess the risk that information is disclosed or accessed. For **self-learning tools, informed client consent is required** before inputting information relating to the representation, and **boilerplate in an engagement letter is "not adequate."** The consent rule turns on whether a tool *learns from inputs*, not where it runs: enterprise cloud tools that don't train on customer data may not trigger it, but they still require vendor diligence. On-prem avoids both the consent question and the vendor diligence.
 - **Competence (Rule 1.1):** understand what the tool can and can't do; uncritical reliance on its output is a risk.
 - **Communication (Rule 1.4)** and **fees (Rule 1.5):** disclose AI use when appropriate; don't bill for learning a tool.
 
@@ -182,7 +182,7 @@ The counter-signals are about *large enterprises*. Small and mid-size regulated 
 4. **California SB 574** (passed 75-0) would bar confidential data in AI unless access is restricted to the attorney and authorized persons. *Check signing status before using.* [Link](https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB574)
 5. **2,078 AI hallucination cases** in court (1,429 in the US) as of Sept 2026. Citations and review matter. [Link](https://www.damiencharlotin.com/hallucinations/)
 6. **Tax preparers:** misusing return information is a federal misdemeanor, and full SSNs can't go offshore even with consent. [Link](https://www.law.cornell.edu/cfr/text/26/301.7216-3)
-7. **The FTC treats every tax-prep firm as a financial institution:** a WISP, vendor oversight, and 30-day breach reporting are required. [Link](https://www.ftc.gov/business-guidance/resources/ftc-safeguards-rule-what-your-business-needs-know)
+7. **The FTC treats every tax-prep firm as a financial institution:** a WISP and vendor oversight are required, and breaches affecting 500+ consumers must be reported within 30 days. [Link](https://www.ftc.gov/business-guidance/resources/ftc-safeguards-rule-what-your-business-needs-know)
 8. **Since June 3, 2026, every SEC-registered adviser** must oversee vendors and get breach notice within 72 hours. [Link](https://www.govinfo.gov/content/pkg/FR-2024-06-03/html/2024-11116.htm)
 9. **CMMC Phase 2 starts Nov 10, 2026**; any cloud touching CUI must be FedRAMP Moderate or equivalent. [Link](https://www.govinfo.gov/content/pkg/FR-2024-10-15/html/2024-22905.htm)
 10. **Healthcare breaches average $7.42M**, and **86% of physicians** want data-privacy assurances before adopting AI. [IBM](https://newsroom.ibm.com/2025-07-30-ibm-report-13-of-organizations-reported-breaches-of-ai-models-or-applications,-97-of-which-reported-lacking-proper-ai-access-controls), [AMA](https://www.ama-assn.org/system/files/physician-ai-sentiment-report.pdf)

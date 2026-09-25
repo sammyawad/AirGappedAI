@@ -13,7 +13,7 @@
 | **What does a client pay in year one?** | **~$29k** (small practice), **~$86k** (mid-size firm), **~$194k** (large firm) at list price |
 | **What do we keep?** | **82–86% gross margin on subscriptions**, ~24–29% on setup plus hardware, and **56–62% blended in a client's first year** |
 | **What does it cost us to deliver?** | A client's hardware costs us **$5.5k–58k** (passed through), plus **20–100 hours** of install labor and **2.5–12 hours a month** of support |
-| **How much money do we need?** | Base case: **~$287k to reach sustained profitability in month 23.** Nearly all of that is founder pay. **With no founder salaries, the business needs only ~$59k.** |
+| **How much money do we need?** | Base case: **~$287k to reach sustained profitability in month 23.** About 80% of that (~$228k) is founder pay. **With no founder salaries, the business needs only ~$59k.** |
 | **What could it become?** | Base case at month 36: **46 clients, $1.78M annual recurring revenue (ARR), $2.19M Year-3 revenue, $349k Year-3 EBITDA.** Upside: $2.97M ARR. Conservative: $0.97M ARR. |
 
 ---
@@ -30,9 +30,9 @@ The box is how you win the client. The subscription is the business.
 
 | Component | How it's priced | Why |
 |---|---|---|
-| **Hardware** | Cost + 15%, quoted valid for 7–14 days, deposit on order | Clients can price-check a DGX Spark. Prices swing monthly in 2026 ([04](04-infrastructure-and-logistics.md#1-the-2026-hardware-reality-memory-prices-doubled)). The markup covers procurement, burn-in, imaging, and warranty handling, not profit. |
+| **Hardware** | Cost + 15%, quoted valid for 7–14 days, paid in full on order | Clients can price-check a DGX Spark. Prices swing monthly in 2026 ([04](04-infrastructure-and-logistics.md#1-the-2026-hardware-reality-memory-prices-doubled)). The markup covers procurement, burn-in, imaging, and warranty handling, not profit. |
 | **Setup & onboarding** | Fixed fee per tier | Pays for your install labor up front, and signals the service is real |
-| **Subscription** | **Flat monthly per tier, unlimited users within the tier's capacity** | Per-seat pricing punishes adoption. A flat fee is easy to approve and is the clearest contrast with cloud tools. |
+| **Subscription** | **Flat monthly per tier, sized by team, no per-seat fees** | Per-seat pricing punishes adoption. A flat fee is easy to approve and is the clearest contrast with cloud tools. |
 | **Pilot** | Paid, 30–45 days, credited toward setup | Free pilots attract tire-kickers. A paid pilot proves intent. |
 
 ### How the price compares
@@ -43,7 +43,9 @@ The box is how you win the client. The subscription is the business.
 | Harvey | ~$1,000–2,000 per user/month (mid-market, third-party estimate) |
 | Managed private AI (OpenClawInstall) | $149–599 per user/month |
 | Laptop AI (Iternal AirgapAI) | $697 per user, one-time; small models only |
-| **Us** | **~$57–125 per user/month equivalent** (Practice $125 at 12 users; Firm $100 at 40; Enterprise $57 at 150) |
+| **Us, subscription only** | **~$57–125 per user/month** (Practice $125 at 12 users; Firm $100 at 40; Enterprise $57 at 150) |
+| **Us, all-in in year one** (hardware + setup + subscription) | **~$108–200 per user/month** (Practice ~$200; Firm ~$178; Enterprise ~$108) |
+| **Us, all-in averaged over 3 years** | **~$74–150 per user/month** (Practice ~$150; Firm ~$126; Enterprise ~$74) |
 
 That places us below premium cloud AI, near managed private-AI offers, and well above "free" DIY. Cheap enough to be an easy yes; expensive enough to be taken seriously.
 
@@ -63,10 +65,10 @@ That places us below premium cloud AI, near managed private-AI offers, and well 
 | Paid pilot (credited on purchase) | $2,500 | $5,000 | $10,000 |
 
 **Terms:**
-- 12-month minimum after the pilot, then annual renewal.
+- 12-month minimum after the pilot, then annual renewal. Design partners can exit at month 6 if the written pilot success criteria aren't being met.
 - **10% discount for annual prepay** (better cash flow, lower churn).
-- Design partners get **50% off year one** plus a 3-year price lock.
-- Hardware quotes are valid for 7–14 days, with a 50–100% deposit on order.
+- Design partners get **50% off the year-one subscription** plus a 3-year price lock. They pay the full setup fee, with the pilot fee credited.
+- Hardware quotes are valid for 7–14 days, and **hardware is paid in full on order** (at minimum, a deposit covering your cost), so you never carry it.
 - Clients who want to buy hardware directly from Dell or their MSP can. You charge the same setup and subscription and specify the configuration (see §9).
 
 ### What the subscription includes
@@ -133,7 +135,7 @@ By Year 3, **80% of gross profit is recurring**. That's the number that makes th
 
 ## 6. Three-year projection
 
-Scenarios differ only in how many clients sign ([`Sales Plan`](financial-model.xlsx) sheet). Hires start automatically when active clients reach set thresholds (engineer at 5, sales/partner manager at 8, second engineer at 25, customer success at 40).
+Scenarios differ only in how many clients sign ([`Sales Plan`](financial-model.xlsx) sheet). Every client pays list price; the effect of partner discounts is shown in §7. Hires start automatically when active clients reach set thresholds (engineer at 5, sales/partner manager at 8, second engineer at 25, customer success at 40).
 
 | | Conservative | **Base** | Upside |
 |---|---|---|---|
@@ -163,7 +165,7 @@ Scenarios differ only in how many clients sign ([`Sales Plan`](financial-model.x
 | Founders unpaid in Year 1 only | $192k | Month 23 |
 | **No founder pay at all** | **$59k** | **Month 19** |
 
-**The business itself is nearly self-funding.** Client deposits cover hardware, setup fees cover installs, and subscription margins cover overhead by around month 19. The real question behind "how much" is **how long the founders can go on reduced pay.** Options, roughly from least to most dilutive:
+**The business itself is nearly self-funding.** Clients pay for hardware on order, setup fees cover installs, and subscription margins cover overhead by around month 19. The real question behind "how much" is **how long the founders can go on reduced pay.** Options, roughly from least to most dilutive:
 - Personal savings, or keeping part-time consulting income in Year 1.
 - Customer prepayments (annual prepay, paid pilots).
 - An SBA or bank loan against contracted recurring revenue (later).
@@ -182,6 +184,7 @@ Scenarios differ only in how many clients sign ([`Sales Plan`](financial-model.x
 | Support hours doubled | $343k | Month 30 | $195k | $1.78M |
 | Churn 20%/year instead of 10% | $302k | Month 25 | $296k | $1.62M |
 | No design-partner discount | $272k | Month 23 | $349k | $1.78M |
+| **30% of clients sold through resellers at 25% off** | **$318k** | **Month 29** | **$256k** | **$1.65M** |
 | Founders unpaid in Year 1 | $192k | Month 23 | $349k | $1.78M |
 
 **Lessons:**
@@ -196,10 +199,10 @@ Scenarios differ only in how many clients sign ([`Sales Plan`](financial-model.x
 | Route | You receive | Your subscription gross profit | Cost to acquire |
 |---|---|---|---|
 | Direct | $4,000/month | $3,450/month (86%) | ~$12,000 (your time, travel, pilot) |
-| Referral partner (12.5% of first-year contract value, excluding hardware) | $4,000/month | $3,450/month | **$7,500 one-time**, cheaper than selling direct |
+| Referral partner (12.5% of first-year contract value, excluding hardware) | $4,000/month | $3,450/month | Most of your CAC (you still sell) **+ $7,500 one-time**, offset by higher win rates and shorter cycles |
 | Reseller partner (25% off the subscription; MSP handles tier-1 support; MSP keeps the hardware margin) | $3,000/month | ~$2,585/month (86% of net; your support drops to ~3.5 hours/month) | Near zero for you |
 
-Partner deals earn less per client but cost little to acquire and scale without adding salespeople. **A referral fee is cheaper than your own CAC.** Pay it happily.
+Partner deals earn less per client, but they bring trust you can't buy and scale without adding salespeople. A warm intro from a client's own IT provider is the best lead you'll get, so pay referral fees happily. The Base projection assumes every client pays list. Set the reseller share on the workbook's `Assumptions` sheet (B31–B32) to see the effect: at 30% resold, capital need rises to ~$318k and break-even moves to month 29 (§7).
 
 ---
 
@@ -213,7 +216,7 @@ Partner deals earn less per client but cost little to acquire and scale without 
 | Capital needed | $287k | $332k |
 | Sustained break-even | Month 23 | Month 26 |
 
-Reselling adds ~$84k of Year-3 gross profit and control over the exact configuration. Direct purchase avoids sales-tax, reseller, and inventory complexity. **Recommendation:** resell by default when you can collect a deposit. Let larger clients buy direct from Dell or their MSP when their procurement prefers it, and charge the same setup and subscription.
+Reselling adds ~$84k of Year-3 gross profit and control over the exact configuration. Direct purchase avoids sales-tax, reseller, and inventory complexity. **Recommendation:** resell by default, with hardware paid in full on order. Let larger clients buy direct from Dell or their MSP when their procurement prefers it, and charge the same setup and subscription.
 
 ---
 
@@ -231,7 +234,7 @@ Reselling adds ~$84k of Year-3 gross profit and control over the exact configura
 - **If it outsources chronologies** to legal nurse consultants at ~$2,500–5,000 per case ([medrecords.ai](https://medrecords.ai/guides/medical-record-review-cost/)): replacing just 2 outsourced reviews a month covers the subscription.
 - **If it does them in-house:** at 12 paralegal hours × $45 loaded per chronology (illustrative), halving that time saves ~$5,400/month, before counting other uses across the firm or the extra cases the freed-up capacity can take.
 - **The hardware** (~$25.7k) is typically deductible in year one under Section 179 / 100% bonus depreciation ([05](05-go-to-market.md#make-the-hardware-easy-to-buy)).
-- **Compared with per-seat cloud:** 40 users × $199/month (Clio Work) = $7,960/month versus $4,000 flat, and nothing leaves the building.
+- **Compared with per-seat cloud:** 40 users × $199/month (Clio Work) is $95,520 a year. Our Firm tier is ~$85,700 in year one (about 10% less, hardware included) and $48,000 a year after that (half), and nothing leaves the building.
 
 Use the client's own numbers in every proposal. The breakeven-hours framing works even when you don't know them.
 
@@ -239,10 +242,10 @@ Use the client's own numbers in every proposal. The breakeven-hours framing work
 
 ## 11. Pricing rules for a startup with no reputation
 
-1. **Don't underprice.** Small firms read a low price as risk. At roughly 20–60% of cloud per-seat prices you're already the value option.
+1. **Don't underprice.** Small firms read a low price as risk. Near the low end of cloud per-seat prices in year one, and about half of them after that, you're already the value option.
 2. **Publish "starting at" prices** on the website. Buyers in these professions hate "call for pricing", and it filters out bad-fit leads.
 3. **Discount the first year, never the list price.** Design partners get 50% off year one, then pay list.
 4. **Always charge for pilots,** and credit the fee toward purchase.
-5. **Always collect hardware deposits.** Never finance a client's hardware from your own cash.
+5. **Get hardware paid in full on order.** Never finance a client's hardware from your own cash. Point clients who want monthly payments to a lessor ([05](05-go-to-market.md#make-the-hardware-easy-to-buy)).
 6. **Raise prices 10–20% for new clients** once you have 5 case studies, and grandfather existing clients.
 7. **Sell annual prepay.** 10% off in exchange for 12 months of cash up front is the cheapest financing you'll find.

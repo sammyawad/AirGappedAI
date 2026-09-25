@@ -12,7 +12,7 @@
 
 **Positioning statement** (internal)
 
-> For law firms, medical organizations, and financial firms that can't risk client data in the cloud, [Brand] is a turnkey private AI appliance. Unlike cloud AI tools, nothing leaves your network, you pay one flat monthly fee with unlimited users, and it keeps working even if we disappear tomorrow.
+> For law firms, medical organizations, and financial firms that can't risk client data in the cloud, [Brand] is a turnkey private AI appliance. Unlike cloud AI tools, nothing leaves your network, you pay one flat monthly fee with no per-seat charges, and it keeps working even if we disappear tomorrow.
 
 ### Four message pillars (and the proof for each)
 
@@ -20,7 +20,7 @@
 |---|---|
 | **Nothing leaves your building** | The Unplugged Demo (§4): pull the network cable, then run their documents. Let their IT person watch the firewall. |
 | **Built for your obligations** | A one-page map from their rules (ABA Op. 512, HIPAA, IRC §7216, GLBA/Reg S-P) to product features (audit log, access control, no training on data, citations for supervision). |
-| **Flat price, unlimited users** | Pricing page with published "starting at" tiers. No per-seat or per-token meter. |
+| **Flat price, no per-seat fees** | Pricing page with published "starting at" tiers, sized by team. No per-seat or per-token meter. |
 | **No lock-in, no startup risk** | Open-weight models, standard hardware the client owns, source-code escrow on request. "If we vanish, the box keeps working." |
 
 The last pillar turns the startup's biggest weakness, no track record, into a talking point. With a cloud vendor, the client's data and workflow die with the vendor. With an appliance they own, they don't.
@@ -41,22 +41,24 @@ Focus beats breadth. Pick **one vertical and one metro** for the first 90 days. 
 **Primary: litigation law firms, 10–150 attorneys, handling medical records.** Insurance defense, medical malpractice, workers' comp, and personal injury.
 
 - Heaviest document loads in law. A single case can mean thousands of pages of medical records.
-- The records are PHI and privileged work. ABA Opinion 512 requires informed client consent before using self-learning AI tools, and *U.S. v. Heppner* (Feb 2026) found consumer-AI chats weren't privileged. On-prem sidesteps both: Florida's bar says AI that doesn't disclose to a third party needs no client consent ([01](01-market-and-regulation.md#3-legal)).
+- The records are PHI and privileged work. ABA Opinion 512 requires informed client consent before using self-learning AI tools, and *U.S. v. Heppner* (Feb 2026) found consumer-AI chats weren't privileged. On-prem keeps the third party out: Florida's bar says AI that doesn't disclose to a third party needs no client consent, and it strengthens the confidentiality argument for privilege (*Heppner* left enterprise and private tools open, so don't promise more) ([01](01-market-and-regulation.md#3-legal)).
 - Client restrictions on AI exist but are still rare (about 2% of outside-counsel guidelines mention AI). Ask about them in discovery calls; when present, they accelerate the deal.
 - The **medical chronology** workflow reuses both of the repo's existing extractors (Medical + Legal).
 - Decisions are made by a managing partner, not a procurement committee.
 
 **Secondary (time-boxed now): CPA and tax firms, 5–75 staff.** Tax season runs January to April, so pilots have to be installed by December. IRC §7216 and the FTC Safeguards Rule give a crisp compliance hook, and K-1/W-2/1099 extraction is painful busy-season work.
 
-**Later:** behavioral health and hospital legal/compliance teams, community banks and credit unions (need SOC 2 first), and defense contractors under CMMC (strongest pull, but heavier compliance obligations for you).
+**Test now, lightly:** defense contractors under CMMC. They have the strongest pull, but heavier compliance obligations for you. Hold 3–5 discovery calls with contractors and CMMC consultants in the first 8 weeks, then make a go/no-go call at day 90 (see [01](01-market-and-regulation.md#7-defense-contractors-the-segment-to-test)).
+
+**Later:** behavioral health and hospital legal/compliance teams, and community banks and credit unions (need SOC 2 first).
 
 ### Buyer map (law firm example)
 
 | Role | Title | What they need to hear |
 |---|---|---|
 | Economic buyer | Managing partner, COO | Hours saved per case, flat cost, malpractice/ethics risk reduced |
-| Champion | Senior paralegal, litigation support manager, practice-group partner | "The chronology that took 3 days takes 1 hour, and I check it with page links" |
-| Technical evaluator | IT director or the firm's MSP | No inbound or outbound internet, AD login, patching plan, who has access |
+| Champion | Senior paralegal, litigation support manager, practice-group partner | "I start from a cited first draft and check it with page links, instead of writing the chronology from scratch." (Measure the actual time saved in the pilot.) |
+| Technical evaluator | IT director or the firm's MSP | No internet access by default, AD login, patching plan, who has access |
 | Blocker | General counsel/ethics partner, cautious senior partners | ABA 512 mapping, no training on data, audit trail, human review |
 
 ---
@@ -66,7 +68,7 @@ Focus beats breadth. Pick **one vertical and one metro** for the first 90 days. 
 ### Site map (one page to start, plus three support pages)
 
 1. **Home** (the landing page below)
-2. **Security**: architecture diagram, data flow, "what leaves the box: nothing", update process, and a downloadable security whitepaper
+2. **Security**: architecture diagram, data flow, "what leaves the box: no documents, prompts, or answers, ever; in strict air-gap mode, nothing at all", update process, and a downloadable security whitepaper
 3. **Pricing**: three tiers with "starting at" prices (see [03](03-pricing-and-unit-economics.md))
 4. **Book a demo**: calendar embed (Cal.com or Calendly) plus a short qualification form
 
@@ -78,11 +80,11 @@ Focus beats breadth. Pick **one vertical and one metro** for the first 90 days. 
 >
 > **[Book an unplugged demo]** · [See pricing]
 >
-> *Nothing leaves your building · Flat monthly price, unlimited users · You own the hardware*
+> *Documents never leave your building · Flat monthly price, no per-seat fees · You own the hardware*
 
 **Problem**
 > ### Your team is already using AI. The question is where your client data is going.
-> Staff paste confidential documents into consumer chatbots every day. Meanwhile your ethics rules, HIPAA, and your clients' outside-counsel guidelines say you're responsible for where that data goes. Most firms respond by banning AI, and then falling behind firms that don't.
+> Staff paste confidential documents into consumer chatbots every day. Meanwhile your ethics rules, HIPAA, and your clients' outside-counsel guidelines say you're responsible for where that data goes. Many firms respond by banning AI (27% of organizations have, at least temporarily, per Cisco), and staff use it anyway.
 
 **How it works** (three steps with icons)
 > 1. **We deliver a pre-configured AI server** sized for your team.
@@ -110,7 +112,7 @@ Focus beats breadth. Pick **one vertical and one metro** for the first 90 days. 
 |---|---|---|
 | Where documents are processed | Vendor's cloud | A server in your office |
 | Works without internet | No | Yes |
-| Pricing | Per seat, often per usage | Flat monthly, unlimited users |
+| Pricing | Per seat, often per usage | Flat monthly per team size, no per-seat fees |
 | Vendor can access your data | Governed by contract | Physically not possible unless you open access |
 | Latest frontier models | ✅ Yes | Strong open-weight models, updated quarterly |
 | Built-in legal research databases | Some (e.g., CoCounsel, Lexis) | No: works on *your* documents |
@@ -135,6 +137,7 @@ FAQ questions to answer on the page:
 - Analytics: privacy-friendly (Plausible or Fathom, ~$9–15/month). A privacy company shouldn't ship Google trackers on its own site.
 - **Clear the name before you build** (see [07](07-risks-and-compliance.md)).
 - Budget one to two weeks of founder time, or $2k–6k for a freelancer with a template.
+- **Launch v1 with only shipped features** (weeks 3–4: upload, extraction, citations). Hold login, audit-log, and chat claims ("normal work login", "full audit log", the FAQ answer on permissions) for v2, once they ship in weeks 9–13.
 
 ---
 
@@ -149,7 +152,7 @@ Screen recording plus a phone shot of the network cable being pulled out:
 2. Show `ping google.com` failing.
 3. Drop in an 80-page synthetic medical record → a chronology appears with page links.
 4. Click a citation → the source page opens.
-5. Ask a question in chat ("When was the first mention of lumbar pain?") → answer with a cite.
+5. *(Once chat ships)* Ask a question in chat ("When was the first mention of lumbar pain?") → answer with a cite.
 6. Export to Word/Excel.
 
 Use it in cold emails (as a thumbnail link), on the landing page, and on LinkedIn.
@@ -160,7 +163,7 @@ The single most important sales asset. Bring a portable box, such as a small des
 
 1. Set it on their conference table. Let their IT person confirm it's not on the network.
 2. Run **their own** sample documents (redacted if they prefer), not yours.
-3. Show extraction, citations, chat, and the audit log recording what just happened.
+3. Show what has shipped: extraction and the chronology with citations, then chat and the audit log once those ship ([06](06-product-roadmap.md#4-roadmap)).
 4. Leave behind a one-page summary of what it did and the pilot offer.
 
 A cloud vendor can't do this demo, which is why it disarms the "who are you?" question. The demo *is* the proof.
@@ -187,14 +190,14 @@ You don't have a client list yet, so **don't fake one**. No "trusted by" logo ba
 
 | You give | You get |
 |---|---|
-| ~50% off year-one subscription; setup at cost | A written case study with real numbers (hours saved) |
+| 50% off the year-one subscription (setup at list, with the pilot fee credited) | A written case study with real numbers (hours saved) |
 | Direct founder access; features built for their workflow | Permission to name them (or "a 40-attorney insurance defense firm in Dallas") |
-| Month-to-month terms for the first 6 months | Two reference calls per quarter |
+| 12-month term with an exit at month 6 if the agreed success criteria aren't met | Two reference calls per quarter |
 | Price lock for 3 years | Monthly feedback session |
 
 **Selection criteria:** one workflow with measurable volume (e.g., 20+ medical chronologies a month), a champion who'll use it daily, within driving distance, and a decision maker who can sign in 30 days.
 
-**Where to find them first:** your own network, the founders' former employers, their lawyers, accountants, and doctors, and local MSPs' existing clients (see §7). Warm intros close 5–10× faster than cold outreach.
+**Where to find them first:** your own network, the founders' former employers, their lawyers, accountants, and doctors, and local MSPs' existing clients (see §7). Warm intros convert far better than cold outreach, which gets ~0.6% replies in these sectors (§9).
 
 ### Prospect list (the target list)
 
@@ -237,11 +240,11 @@ Use the CRM template in [`prospect-list-template.csv`](prospect-list-template.cs
 - **CAN-SPAM applies to B2B email:** physical postal address, a working opt-out honored within 10 business days, and honest subject lines. Penalties run up to **$53,088 per email** ([FTC](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business)).
 - **Keep volume small and personal:** 20–40 new prospects per day per sender. Lists under 50 contacts get roughly 3× the reply rate of lists over 1,000 ([Woodpecker 2026](https://woodpecker.co/blog/cold-email-statistics/)).
 - **LinkedIn:** about 100 connection invitations per week ([Evaboot](https://evaboot.com/blog/linkedin-limits)).
-- **Phone:** calling business lines is fine. Don't text prospects' mobile numbers without consent.
+- **Phone:** calls to business lines are generally lower-risk than texts to mobiles, but telemarketing rules (TCPA and state laws) still apply. Honor do-not-call requests, and don't text prospects' mobile numbers without consent.
 
 ### Templates
 
-Fill every `{field}`. Personalize the first line; generic first lines get deleted. Every commercial email must include your **physical postal address** and an **opt-out line**.
+Fill every `{field}`. Personalize the first line; generic first lines get deleted. Every commercial email must include your **physical postal address** and an **opt-out line**. **Only mention features that have shipped:** drop "work logins" and "audit log" from these templates until weeks 9–10.
 
 **Law firm, Email 1**
 
@@ -251,7 +254,7 @@ Fill every `{field}`. Personalize the first line; generic first lines get delete
 >
 > {Personalized line: e.g., "Saw {Firm} just added two attorneys to the Houston insurance defense team."}
 >
-> Most litigation firms I talk to have the same problem: paralegals spend days turning medical records into chronologies, and AI could do the first pass in an hour. But ABA Opinion 512 says self-learning AI tools need informed client consent (boilerplate doesn't count), and in February a federal judge ruled that chats with a consumer AI tool weren't privileged.
+> Most litigation firms I talk to have the same problem: paralegals spend hours to days turning medical records into chronologies, and AI can produce a cited first draft for them to check. But ABA Opinion 512 says self-learning AI tools need informed client consent (boilerplate doesn't count), and in February a federal judge ruled that chats with a consumer AI tool weren't privileged.
 >
 > We built a small AI server that sits in your office and works with the internet unplugged. Nothing goes to a third party, and every line of the chronology links back to its source page.
 >
@@ -292,7 +295,7 @@ Fill every `{field}`. Personalize the first line; generic first lines get delete
 >
 > Busy season is {N} weeks out. The firms we talk to want AI to pull data from K-1s, 1099s, and brokerage statements, but uploading client return information to a cloud AI raises IRC §7216 consent and FTC Safeguards Rule questions most firms would rather not answer.
 >
-> We install a private AI server in your office that extracts that data with no internet connection. Every value links to the page it came from, so your reviewers can check it fast.
+> We install a private AI server in your office that extracts that data without needing an internet connection. Every value links to the page it came from, so your reviewers can check it fast.
 >
 > We're taking 3 firms as pilot partners for the 2027 season at a founding discount. Want to see it on a sample K-1?
 
@@ -310,17 +313,17 @@ Fill every `{field}`. Personalize the first line; generic first lines get delete
 
 > **Subject:** Private AI for your law-firm clients
 >
-> {First name}, your clients are asking about AI, and most of them shouldn't be pasting client files into ChatGPT. We build turnkey private AI servers for law and medical offices: no internet required, AD login, audit log.
+> {First name}, your clients are asking about AI, and most of them shouldn't be pasting client files into ChatGPT. We build turnkey private AI servers for law and medical offices: no internet required, work logins, audit log.
 >
 > We handle the AI; you keep the client relationship, the hardware margin, and {X}% of the recurring subscription. Open to a 20-minute call?
 
 **LinkedIn connection note** (under 200 characters)
 
-> Hi {First name}. I work with litigation firms on AI that runs fully offline, inside the firm. Not pitching here, just following the {practice area} space. Glad to connect.
+> Hi {First name}. I work with litigation firms on AI that runs inside the firm and works with the internet unplugged. Not pitching here, just following the {practice area} space. Glad to connect.
 
 ### Phone script (30 seconds)
 
-> "Hi {name}, this is {you} with {Company}. I'll be brief: we install AI servers inside law firms that run with no internet connection, so records never leave the building. Firms use it mostly for medical chronologies. I sent a 2-minute video last week. Is AI on client documents something your firm is working through, or is it off the table right now?"
+> "Hi {name}, this is {you} with {Company}. I'll be brief: we install AI servers inside law firms that don't need an internet connection to work, so records never leave the building. Firms use it mostly for medical chronologies. I sent a 2-minute video last week. Is AI on client documents something your firm is working through, or is it off the table right now?"
 
 Then **listen.** Either answer is useful: "off the table" usually means "because of confidentiality", which is exactly your opening.
 
@@ -330,7 +333,7 @@ Then **listen.** Either answer is useful: "off the table" usually means "because
 
 ### Managed service providers (MSPs): the most important channel
 
-Small law firms, practices, and CPA firms outsource IT to MSPs. A 30-user firm typically pays its MSP **$3,000–12,000/month** ($100–400 per user; [Datapath 2026](https://www.mydatapath.com/blog/managed-it-services-cost-pricing-guide-2026/)). That MSP is the trusted technical advisor your startup isn't yet. One partner can bring 20–100 potential clients.
+Small law firms, practices, and CPA firms outsource IT to MSPs. A 30-user firm typically pays its MSP **$3,000–12,000/month** ($100–400 per user; [Datapath 2026](https://www.mydatapath.com/blog/managed-it-services-cost-pricing-guide-2026/)). That MSP is the trusted technical advisor your startup isn't yet. One partner can bring dozens of potential clients (estimate; it depends on how many of the MSP's clients are in your verticals).
 
 **Partner terms to offer** (typical channel ranges; [Chanimal](https://chanimal.com/resources/pricing/reseller-margins/), [Compare the Cloud](https://www.comparethecloud.net/articles/uk-msps-stop-chasing-hardware-margin-start-selling-monthly-outcomes-subscription)):
 
@@ -448,8 +451,8 @@ Typical sales cycles (estimates): small law firms 2–8 weeks; mid-size firms 3�
 
 ### Make the hardware easy to buy
 
-- **The whole box is deductible in year one.** The Section 179 limit is **$2.56M for 2026**, and **100% bonus depreciation is now permanent** for equipment acquired after Jan 19, 2025 ([IRS Rev. Proc. 2025-32](https://www.irs.gov/pub/irs-drop/rp-25-32.pdf), [IRS Notice 2026-11](https://www.irs.gov/pub/irs-drop/n-26-11.pdf)).
-  - Example: a $25k box at a 30–40% combined tax rate saves the firm roughly $7.5–10k in taxes (estimate).
+- **The box is typically deductible in year one.** The Section 179 limit is **$2.56M for 2026**, and **100% bonus depreciation is now permanent** for equipment acquired after Jan 19, 2025 ([IRS Rev. Proc. 2025-32](https://www.irs.gov/pub/irs-drop/rp-25-32.pdf), [IRS Notice 2026-11](https://www.irs.gov/pub/irs-drop/n-26-11.pdf)).
+  - Example: deducting a $25k box in year one, instead of depreciating it over several years, cuts that year's taxes by roughly $7.5–10k at a 30–40% combined rate (estimate). That's a timing benefit for cash flow, not a permanent saving.
   - Section 179 can't exceed taxable income, and nonprofits get no benefit. Say "ask your CPA", not "it's free".
 - **Leasing:** Dell Financial Services ($1 buyout or fair-market-value options; can cover hardware, software, and services), or third-party lessors like LEAF and GreatAmerica ([Dell](https://www.dell.com/en-us/dt/payment-solutions/index.htm)). Leasing turns a $25k purchase into a monthly line item.
 
@@ -474,13 +477,15 @@ Built from 2026 price sources: [Stripe Atlas](https://stripe.com/atlas), [Insure
 
 ## 10. First 90 days
 
+This assumes one founder building full-time and one selling full-time. If you're splitting time, stretch it by ~50% ([06](06-product-roadmap.md#4-roadmap)). **Marketing shows only features that have shipped.**
+
 | Weeks | Product | Go-to-market |
 |---|---|---|
-| 1–2 | Fix verified bugs; config-driven models; structured outputs | Pick the new name and get a clearance opinion ([07](07-risks-and-compliance.md#1-the-name)); form the LLC; draft MSA, BAA, and pilot agreement; apply to NVIDIA Inception (free) |
-| 3–4 | PDF/OCR upload; web UI; synthetic demo data | Landing page live; record the 2-minute video; build the first 300-prospect list; set up the sending domain |
-| 5–6 | Medical chronology workflow with citations | Warm-intro outreach to your network; approach 3 local MSPs; **CPA track:** 5 warm intros to CPA firms for pre-season pilots |
-| 7–8 | Portable demo box; offline installer | 10+ Unplugged Demos booked; pitch a CLE webinar to a local bar association; apply to ILTA Startup Hub and CPA.com Accelerator |
-| 9–10 | Auth, audit log, admin page | Sign 2–3 design partners; start paid pilots (CPA pilots installed by mid-December) |
-| 11–13 | Accuracy harness; fix what pilots surface | Outreach at 20–40 new prospects a day per sender; capture time-savings data for the first case study |
+| 1–2 | Fix verified bugs; config-driven models; structured outputs; swap in a modern model | Pick the new name and get a clearance opinion ([07](07-risks-and-compliance.md#1-the-name)); form the LLC; draft MSA, BAA, and pilot agreement; apply to NVIDIA Inception (free); start ~15 discovery calls (law firms, CPA firms, and 3–5 defense contractors or CMMC consultants) |
+| 3–4 | PDF/OCR upload; web UI with review queue; synthetic demo data; accuracy test set | Landing page v1 (shipped features only); build the first 300-prospect list; set up and warm the sending domain; **CPA go/no-go**: if a CPA firm commits as a design partner, schedule tax-form extraction for weeks 7–9, otherwise restart the CPA track after April 15 |
+| 5–6 | Medical chronology v1 with page citations, measured on the test set | Record the 2-minute video; warm-intro outreach to your network; approach 3 local MSPs |
+| 7–8 | Portable demo box; offline installer; tax-form extraction (only if CPA is go) | 10+ Unplugged Demos booked; pitch a CLE webinar to a local bar association; apply to ILTA Startup Hub and CPA.com Accelerator |
+| 9–10 | Login (LDAP/AD), audit log, admin page; accuracy check on each pilot's sample documents | Sign 2–3 design partners; start paid pilots once accuracy on their documents is measured (CPA pilots installed by mid-December) |
+| 11–13 | Chat over documents; fix what pilots surface | Landing page v2 adds login, audit-log, and chat claims; outreach at 20–40 new prospects a day per sender; capture time-savings data; defense go/no-go from the discovery calls |
 
-**Target at day 90:** 2–3 design partners in paid pilots, 10+ qualified opportunities in pipeline, and time-savings data being captured for the first case study.
+**Target at day 90:** 2–3 design partners in paid pilots, 10+ qualified opportunities in pipeline, time-savings data being captured for the first case study, and clear go/no-go decisions on the CPA and defense tracks.

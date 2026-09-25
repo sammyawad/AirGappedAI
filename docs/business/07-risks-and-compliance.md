@@ -6,7 +6,7 @@
 
 ## 1. The name
 
-**Recommendation: don't launch publicly as "AirGappedAI".** Pick a distinctive brand, get a clearance opinion, and keep "air-gapped" as a *descriptor* in your tagline.
+**Recommendation: don't launch publicly as "AirGappedAI".** Pick a distinctive brand and get a clearance opinion. Use descriptive words like "private" or "works with the internet unplugged" in the tagline, and reserve "air-gapped" for the strict mode (§2).
 
 | Issue | Detail |
 |---|---|
@@ -22,7 +22,7 @@ Findings from USPTO and domain-registry lookups on 2026-09-25 (see [02](02-compe
 2. Screen 10–20 candidates yourself: the USPTO trademark search (classes 9 and 42), a web search, `.com` availability, and the same name on LinkedIn and GitHub.
 3. Take the best 2–3 to a trademark attorney for a clearance search and opinion (typically low thousands of dollars; estimate).
 4. File an **intent-to-use** application in classes 9 (software) and 42 (SaaS and IT services) once you've picked one.
-5. Keep "air-gapped" in the tagline, e.g., "{Brand}: air-gapped AI for law firms." Descriptive words are fine *next to* a distinctive mark.
+5. Put the description in the tagline, e.g., "{Brand}: private AI for law firms that works with the internet unplugged." Descriptive words are fine *next to* a distinctive mark. Say "air-gapped" only about the strict mode, where the box truly has no network path out (§2).
 
 The repo and solution names (`AirGappedAI.sln`, `DocumentProcessor.Api`) are internal and can stay until the brand is chosen.
 

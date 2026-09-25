@@ -18,7 +18,7 @@ POST /api/process {text, category}
 
 | Area | Status |
 |---|---|
-| Build | ✅ Builds on .NET 8 SDK (1 nullable warning) |
+| Build | ✅ Builds on .NET 8 SDK with 1 nullable warning, plus 2 CS9057 warnings: OllamaSharp 5.4.24's source generator needs a newer compiler, so it's skipped (unused here) |
 | Tests | ✅ 2 pass, but one is the empty `UnitTest1` template; the real test mocks both dependencies |
 | Categories | Medical, Legal, Financial, each with 6 extraction fields |
 | Model | `llama3` (Meta, April 2024, 8B parameters, 8K-token context), hardcoded |
@@ -44,8 +44,8 @@ Each item below was reproduced, not guessed.
 | 1 | Unknown or wrong-case category crashes | `PromptFactory.cs:12`, `:80` | `"Tax"` or `"medical"` → **HTTP 500** with a stack trace (Development) | Validate input and return 400 with ProblemDetails; make category lookup case-insensitive |
 | 2 | Empty text returns success | `ClaimProcessingService.cs:35` | `""` → **HTTP 200 with an empty body** (also the build's only nullable warning) | Return 400 |
 | 3 | Model server down → raw 500 | `OllamaProvider.cs:45` | Stack trace leaks; no retry or health check | Catch, return 503, and add `/health` |
-| 4 | **Brittle JSON parsing** | `OllamaProvider.cs:55-56` | If the model returns a number (`"total_amount": 1250.00`), a list (`"parties": ["Acme","Doe"]`), or wraps the JSON in markdown code fences, parsing throws and the document is **silently sent to manual review**. Local models do all three regularly. | Use Ollama/vLLM **structured outputs** (JSON-schema `format`), parse `ExtractedData` as `Dictionary<string, JsonElement>`, and strip code fences before parsing |
-| 5 | Long documents silently truncated | `OllamaProvider.cs:15` | `llama3` caps at 8K tokens (about 12 pages), and Ollama's default context window can be just 4K tokens unless `num_ctx` is set. Ollama [truncates silently](https://fast.io/resources/ollama-context-window/). A 40-page contract or a 300-page medical record loses most of its content with no warning. | Chunk and map-reduce; use a long-context model; set `num_ctx`; report "pages processed" |
+| 4 | **Brittle JSON parsing** | `OllamaProvider.cs:55-56` | If the model returns a number (`"total_amount": 1250.00`), a list (`"parties": ["Acme","Doe"]`), or wraps the JSON in markdown code fences, parsing throws. The fallback (`OllamaProvider.cs:68-78`) returns HTTP 200 with `RequiresManualReview: true` and the error text, and nothing is logged, **so a demo shows "needs review" instead of results**. Local models do all three regularly. | Use Ollama/vLLM **structured outputs** (JSON-schema `format`), parse `ExtractedData` as `Dictionary<string, JsonElement>`, and strip code fences before parsing |
+| 5 | Long documents silently truncated | `OllamaProvider.cs:15`, `:32-41` | `llama3` caps at 8K tokens (about 12 pages), and the request (`:32-41`) never sets `num_ctx`, so Ollama's default context window, which can be just 4K tokens, applies. Ollama [truncates silently](https://fast.io/resources/ollama-context-window/). A 40-page contract or a 300-page medical record loses most of its content with no warning. | Chunk and map-reduce; use a long-context model; set `num_ctx`; report "pages processed" |
 | 6 | System prompt sent twice | `OllamaProvider.cs:26-30`, `:38-39` | Wastes context on every call | Send it once, as the system message |
 | 7 | Hardcoded endpoint and model | `OllamaProvider.cs:14-15` | Can't change the model or server without recompiling | Move to `appsettings.json`; support any OpenAI-compatible endpoint |
 | 8 | Commercial-license trap in tests | `DocumentProcessor.Specs.csproj:14` | FluentAssertions **8.x** requires a paid Xceed license for commercial use (the test run prints this warning) | Pin FluentAssertions 7.x (Apache-2.0) or switch to AwesomeAssertions or Shouldly |
@@ -93,47 +93,49 @@ Don't build commodity pieces. The value is in the vertical workflows, the securi
 
 ## 4. Roadmap
 
-Sized for 1–2 engineers. The numbered weeks assume focus; slip them 50% if the founders are also selling.
+Sized for one full-time engineer (the other founder sells). If the founders split their time between building and selling, add ~50%. The weeks match the 90-day plan in [05](05-go-to-market.md#10-first-90-days).
 
-### Phase 0 — Demo-ready (weeks 1–3)
+### Phase 0 — Demo-ready (weeks 1–6)
 
-Goal: a 5-minute demo that runs **with the network cable unplugged** on a portable box.
+Goal: a 5-minute demo of the medical chronology that runs **with the network cable unplugged**, with accuracy measured before anyone sees it.
 
 - [ ] Fix issues 1–10 above
-- [ ] Config-driven model and endpoint; OpenAI-compatible client
+- [ ] Config-driven model and endpoint; OpenAI-compatible client; a modern Apache-2.0 model
 - [ ] Structured-output JSON schemas per category
 - [ ] PDF and DOCX upload; OCR for scans
 - [ ] Chunking with map-reduce and page citations on every extracted field
-- [ ] Minimal web UI: upload → extracted fields with page links → approve/edit → export to Excel
+- [ ] Minimal web UI: upload → extracted fields with page links → approve/edit (review queue) → export to Excel
 - [ ] **Demo dataset built only from synthetic or public data.** Never real client data.
   - Medical: [Synthea](https://github.com/synthetichealth/synthea) synthetic patient records (Apache-2.0)
   - Legal: [CUAD](https://www.atticusprojectai.org/cuad) commercial contracts with clause labels (CC BY 4.0)
   - Financial: synthetic W-2, 1099, and K-1 forms filled from public-domain IRS templates; synthetic bank statements and invoices
+- [ ] **Accuracy test set v1:** a small gold-labeled set per workflow, with field-level scores
+- [ ] **Medical chronology v1** (weeks 5–6): the beachhead workflow, measured on the test set
 - [ ] One-command start: `docker compose up` with models pre-pulled
 
-### Phase 1 — Pilot-ready (weeks 4–10)
+### Phase 1 — Pilot-ready (weeks 7–13)
 
 Goal: install at 2–3 design-partner firms.
 
-- [ ] Auth (local accounts plus LDAP/AD) and roles (admin, reviewer, user)
-- [ ] Workspace/matter-level permissions
-- [ ] Append-only audit log: user, action, document hash, model and prompt versions, timestamp
-- [ ] Chat-with-documents (RAG) with citations, via the borrowed UI above
+- [ ] Weeks 7–8: portable demo box; offline bundle builder and installer (container images, model weights, checksum manifest, signed)
+- [ ] Weeks 7–9, **only if the CPA track is go**: W-2, 1099, and K-1 extraction into a review sheet
+- [ ] Weeks 9–10: auth (local accounts plus LDAP/AD), roles (admin, reviewer, user), and workspace/matter-level permissions
+- [ ] Weeks 9–10: append-only audit log (user, action, document hash, model and prompt versions, timestamp) and admin page (GPU health, queue depth, model version, disk, last update)
+- [ ] **Before each pilot goes live:** run the accuracy check on the client's own sample documents and share the results
+- [ ] Weeks 11–13: chat over documents (RAG) with citations, via the borrowed UI above
 - [ ] Batch jobs and a queue for large uploads
-- [ ] Accuracy harness: gold-labeled test sets per workflow, field-level scores, regression check on every model upgrade
-- [ ] Admin page: GPU health, queue depth, model version, disk, last update
-- [ ] Offline bundle builder: container images, model weights, and a checksum manifest, signed
+- [ ] Accuracy harness v2: regression check on every model upgrade
 - [ ] Hardening: disk encryption, TLS with the client's internal CA, and an egress-deny firewall profile that proves the box works with no outbound traffic
 
-### Phase 2 — Product-market fit (months 3–9)
+### Phase 2 — Product-market fit (months 4–9)
 
-Pick workflows from the beachhead segment (see [05](05-go-to-market.md)), not all at once:
+Harden what the pilots use, then add workflows from the beachhead segment (see [05](05-go-to-market.md)), not all at once:
 
 | Segment | Workflow | Why it sells |
 |---|---|---|
-| Litigation (insurance defense, med-mal, PI, workers' comp) | **Medical chronology**: hundreds of pages of records → dated timeline of visits, diagnoses, treatments, and gaps, each with page citations | Combines the existing Medical and Legal extractors. Paralegals spend days on this. The records are PHI, and carriers often restrict cloud AI. |
+| Litigation (insurance defense, med-mal, PI, workers' comp) | **Medical chronology v2**: hundreds of pages of records → dated timeline of visits, diagnoses, treatments, and gaps, each with page citations, hardened from pilot feedback | Combines the existing Medical and Legal extractors. Paralegals and nurse reviewers spend hours to days per chronology. The records are PHI and privileged work. |
 | Law firms (all) | Contract clause extraction against a firm playbook; deposition summaries; discovery first-pass triage | High-volume, repetitive, confidential |
-| CPA/tax | W-2, 1099, and **K-1** extraction into a review sheet; engagement-letter and notice drafting | Busy-season labor crunch, plus IRC §7216 and the FTC Safeguards Rule |
+| CPA/tax | W-2, 1099, and **K-1** extraction (v1 in Phase 1 if the CPA track is go); engagement-letter and notice drafting | Busy-season labor crunch, plus IRC §7216 and the FTC Safeguards Rule |
 | Healthcare | Prior-authorization letter drafting; chart summarization for referrals; coding suggestions (human-reviewed) | Administrative burden; PHI never leaves |
 | Banks/credit unions | Loan-file document extraction; bank-statement analysis; policy Q&A | Third-party-risk scrutiny makes cloud AI slow to approve |
 
