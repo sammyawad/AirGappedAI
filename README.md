@@ -179,3 +179,9 @@ If the LLM returns malformed or non-JSON output, the system returns a safe fallb
 | Swap the LLM model | Change `ModelName` constant in `OllamaProvider.cs` |
 | Support multiple models | Inject model name via `appsettings.json` and `IConfiguration` |
 | Add authentication | Add `app.UseAuthentication()` / `app.UseAuthorization()` in `Program.cs` |
+
+---
+
+## Business Strategy
+
+Go-to-market strategy, pricing, a financial model, and a product roadmap for selling this as a private AI appliance to law, medical, and financial firms are in [`docs/business/`](docs/business/README.md).
