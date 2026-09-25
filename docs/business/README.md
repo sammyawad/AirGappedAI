@@ -40,6 +40,7 @@ For comparison, cloud legal AI costs **$199–500 per user/month**, and Harvey r
 - **About 80% of that $287k (~$228k) is founder pay.** With no founder salaries, the business needs only **~$59k**, because clients pay for hardware in full on order and setup fees fund installs.
 - If 30% of clients come through IT-partner resellers at 25% off, the Base case needs ~$318k and breaks even in month 29 ([03](03-pricing-and-unit-economics.md#7-what-moves-the-numbers-base-case-sensitivities)).
 - **Upside:** $126k needed, $2.97M ARR. **Conservative:** $640k needed if you don't cut costs, which you should.
+- **As a side business** (one person, no salary): ~$23k in, profitable from month 10, and ~$140k then ~$317k pre-tax profit in Years 2–3 at ~19–25 hours a week in the Base case ([08](08-side-business.md)).
 
 **How to win with no reputation:**
 - **The Unplugged Demo.** Pull the network cable in the prospect's conference room and run their documents.
@@ -80,7 +81,9 @@ The design is the right starting point. The full assessment and roadmap are in [
 | [05 — Go-to-Market](05-go-to-market.md) | Positioning, landing page copy, the demo, design partners, prospect list sources, outreach templates, MSP and CLE channels, event calendar, funnel math, 90-day plan |
 | [06 — Product Roadmap](06-product-roadmap.md) | What's built, verified issues with file and line references, gaps to a sellable product, phased roadmap |
 | [07 — Risks & Compliance](07-risks-and-compliance.md) | The naming problem, safe marketing claims, contracts, security posture, licensing, insurance, risk register |
+| [08 — Side Business](08-side-business.md) | Running it alongside a day job: profit, hours per week, cash needed, the rules that make it work, when to go full-time |
 | [financial-model.xlsx](financial-model.xlsx) | Editable model: assumptions, hardware bill of materials, sales plan, operating costs, 36-month projection, unit economics, dashboard, benchmarks |
+| [financial-model-side-business.xlsx](financial-model-side-business.xlsx) | The same model set up for one person part-time: no salary, no hires, lean costs, slower sales |
 | [prospect-list-template.csv](prospect-list-template.csv) | CRM import template for the target list |
 
 ---
