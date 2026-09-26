@@ -75,11 +75,38 @@ The hour estimates for building, selling, and admin are planning assumptions; in
 
 | When | What happens |
 |---|---|
-| Months 1–6 | You're out ~$15k at the low point: demo box $5.5k, insurance ~$4k, legal and contracts ~$8k, pen test ~$5k, tools and marketing, partly offset by the first design partner around month 4–6. |
+| Months 1–6 | You spend ~$21k (demo box plus ~$2.7k/month of running costs). The first design partner (month 4–6) brings in ~$6k of profit, so you're out **~$15k at the low point** (month 6). |
 | **Month 7** | Profitable for good |
 | **Month 13** | Profit stays above **$10k/month** (~$120k/year pace) |
 | Month 24 | ~$23k/month in subscriptions; ~$202k cumulative profit since the start |
 | Month 36 | ~$38k/month in subscriptions; ~$39k/month profit; **~$563k cumulative profit** (pre-tax) |
+
+### What the ~$15k is
+
+| Through month 6 | Amount |
+|---|---|
+| Demo box (ASUS Ascent GX10 or DGX Spark, plus UPS) | $5,500 |
+| Legal and accounting (LLC, contract templates, name clearance, bookkeeping) | $4,000 |
+| Security test of the box before pilots | $2,500 |
+| Marketing (CLE fees, local events, website) | $2,500 |
+| Insurance (E&O, cyber, general liability) | $2,000 |
+| Software and tools (email, CRM, prospecting) | $2,000 |
+| Local travel | $1,500 |
+| 10% buffer | $1,450 |
+| **Spent** | **$21,450** |
+| First client's payments, minus their hardware | −$6,300 |
+| **Lowest point** | **−$15,150** |
+
+The model spreads each year's budget evenly; in practice legal work, the pen test, and insurance are mostly up-front bills. Client hardware never comes out of your pocket: clients pay for it in full when they order.
+
+**Bare minimum to land the first client: roughly $7–10k, or $3–5k without buying the demo box.**
+- **Demo box** (~$4,000–4,700): skip it at first if you already own a PC with a 24 GB+ GPU or a Mac with 64 GB+ of memory, which can run a smaller model for demos.
+- **LLC and contract templates** with a lawyer's review: ~$1,500–3,000.
+- **Name clearance** (attorney search; the USPTO filing is ~$350 per class later): ~$500–1,500.
+- **Insurance:** ~$330/month.
+- **Domain, email, and website:** ~$200.
+
+**Can wait:** the $5k pen test (until a client's IT asks), prospecting tools (warm intros come first), events, and the buffer.
 
 ---
 
