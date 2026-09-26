@@ -9,29 +9,29 @@
 
 **Yes, it's doable on the side, with limits.**
 - Sell only the two smaller tiers (Practice and Firm), in one metro, with one workflow (the medical chronology).
-- Expect **~15 hours a week in year one** (mostly building the product), rising to **~20–25 by year three**.
+- Expect **~11 hours a week in year one**, with building the product (~100–190 hours) front-loaded into the first 2–3 months. That rises to **~22 in year two and ~27 by year three** in the Base case.
 - Around **10–15 clients**, the workload outgrows a day job. That's the point to either go full-time or hand the field work to an IT partner.
 
 ### What it could earn (profit to you, before tax)
 
 | | Conservative | **Base** | Upside |
 |---|---|---|---|
-| New clients (Year 1 / 2 / 3) | 1 / 4 / 5 | **2 / 6 / 7** | 4 / 10 / 15 |
-| Active clients at month 36 | ~9 | **~13** | ~26 |
-| Revenue (Year 1 / 2 / 3) | $12k / $179k / $307k | **$56k / $257k / $472k** | $116k / $491k / $977k |
-| **Profit to you (Year 1 / 2 / 3)** | −$31k / $75k / $185k | **−$11k / $140k / $317k** | $19k / $312k / $697k |
-| Your hours per week (Year 1 / 2 / 3) | 12 / 15 / 20 | **14 / 19 / 25** | 17 / 28 / 44 |
-| Cash you put in before it pays for itself | ~$31k | **~$23k** | ~$21k |
-| Profitable for good from | Month 13 | **Month 10** | Month 7 |
-| Profit stays above $10k/month from | Month 28 | **Month 16** | Month 13 |
-| Recurring revenue (ARR) at month 36 | $273k | **$404k** | $821k |
+| New clients (Year 1 / 2 / 3) | 2 / 4 / 6 | **3 / 7 / 7** | 6 / 12 / 15 |
+| Active clients at month 36 | ~11 | **~15** | ~29 |
+| Revenue (Year 1 / 2 / 3) | $56k / $177k / $385k | **$76k / $340k / $517k** | $186k / $617k / $1.08M |
+| **Profit to you (Year 1 / 2 / 3)** | −$11k / $90k / $238k | **$3k / $199k / $361k** | $59k / $407k / $797k |
+| Your hours per week (Year 1 / 2 / 3) | 9 / 16 / 22 | **11 / 22 / 27** | 16 / 33 / 47 |
+| Cash you put in before it pays for itself | ~$23k | **~$15k** | ~$13k |
+| Profitable for good from | Month 10 | **Month 7** | Month 4 |
+| Profit stays above $10k/month from | Month 23 | **Month 13** | Month 11 |
+| Recurring revenue (ARR) at month 36 | $331k | **$459k** | $930k |
 
 **How to read it:**
 - "Profit to you" is the business's operating profit minus equipment purchases, with no salary for you. You do the installs and support, so there's no labor cost.
-- If you paid someone $90/hour to do that work, Base Year-3 profit would be ~$259k instead of ~$317k.
-- By Year 3, the Upside case is 44 hours a week. That's not a side business anymore; it's the signal to go full-time.
+- If you paid someone $90/hour to do that work, Base Year-3 profit would be ~$297k instead of ~$361k.
+- By Year 3 the Base case is ~27 hours a week, and the Upside case ~47. Past ~25 hours, it isn't a side business anymore; that's the signal to go full-time or bring in an IT partner.
 
-**The big unknown is sales, not margins.** Landing 6 clients in Year 2 while holding a day job depends on warm introductions and an IT partner, since cold email to these firms gets ~0.6% replies ([05](05-go-to-market.md#9-funnel-math)). The Conservative column shows what happens if clients come slower: still profitable by Year 2, just smaller.
+**The big unknown is sales, not margins or the build.** Landing 7 clients in Year 2 while holding a day job depends on warm introductions and an IT partner, since cold email to these firms gets ~0.6% replies ([05](05-go-to-market.md#9-funnel-math)). The Conservative column shows what happens if clients come slower: still profitable by Year 2, just smaller.
 
 ---
 
@@ -53,16 +53,16 @@
 
 | Hours per year | Year 1 | Year 2 | Year 3 |
 |---|---|---|---|
-| Building and maintaining the product | 400 | 200 | 200 |
+| Building and maintaining the product | 150 | 200 | 200 |
 | Prospecting and networking | 75 | 100 | 100 |
-| Selling (≈40 hours per new client, including demos you lose) | 80 | 240 | 280 |
-| Installs (20 hours Practice, 40 Firm) | 60 | 160 | 200 |
-| Support (2.5 hours/month Practice, 5 Firm) | 22 | 195 | 443 |
+| Selling (≈40 hours per new client, including demos you lose) | 120 | 280 | 280 |
+| Installs (20 hours Practice, 40 Firm) | 80 | 200 | 200 |
+| Support (2.5 hours/month Practice, 5 Firm) | 49 | 260 | 506 |
 | Admin (bookkeeping, contracts, insurance) | 100 | 100 | 100 |
-| **Total** | **~740 (14/week)** | **~995 (19/week)** | **~1,320 (25/week)** |
-| **Effective pay per hour** | (investing) | **~$140** | **~$240** |
+| **Total** | **~575 (11/week)** | **~1,140 (22/week)** | **~1,385 (27/week)** |
+| **Effective pay per hour** | (break-even year) | **~$175** | **~$260** |
 
-The hour estimates for building, selling, and admin are planning assumptions; install and support hours come from the model. **Year 1 is front-loaded.** The product needs ~400 hours before the first pilot, which is about **5–6 months at 15–20 hours a week**. That's why the first client lands around month 7–9.
+The hour estimates for building, selling, and admin are planning assumptions; install and support hours come from the model. **Year 1 is front-loaded.** The product needs ~100–190 hours before the first pilot (itemized in [06](06-product-roadmap.md#build-estimate)), which is about **6–12 weeks at 15–20 hours a week**. That's why the first client lands around month 4–6. After that, **selling and support, not coding, eat the hours.**
 
 **The catch: a lot of this work happens during business hours.** Demos, installs, and support calls all happen when law firms and CPA firms are open. Plan for it:
 - **Batch demos** into one weekday morning a week or two a month, using PTO or flex time.
@@ -75,11 +75,11 @@ The hour estimates for building, selling, and admin are planning assumptions; in
 
 | When | What happens |
 |---|---|
-| Months 1–9 | You invest ~$23k total: demo box $5.5k, insurance ~$4k, legal and contracts ~$8k, pen test ~$5k, tools and marketing. Revenue starts with the first design partner around month 7–9. |
-| **Month 10** | Profitable for good |
-| **Month 16** | Profit stays above **$10k/month** (~$120k/year pace) |
-| Month 24 | ~$18k/month in subscriptions; ~$129k cumulative profit since the start |
-| Month 36 | ~$34k/month in subscriptions; ~$35k/month profit; **~$446k cumulative profit** (pre-tax) |
+| Months 1–6 | You're out ~$15k at the low point: demo box $5.5k, insurance ~$4k, legal and contracts ~$8k, pen test ~$5k, tools and marketing, partly offset by the first design partner around month 4–6. |
+| **Month 7** | Profitable for good |
+| **Month 13** | Profit stays above **$10k/month** (~$120k/year pace) |
+| Month 24 | ~$23k/month in subscriptions; ~$202k cumulative profit since the start |
+| Month 36 | ~$38k/month in subscriptions; ~$39k/month profit; **~$563k cumulative profit** (pre-tax) |
 
 ---
 
@@ -96,7 +96,7 @@ The hour estimates for building, selling, and admin are planning assumptions; in
 ## 6. When to go full-time
 
 Go full-time when any of these is true:
-- **Profit has matched your salary for ~6 months.** In the Base case that's somewhere around month 16–24, depending on your salary.
+- **Profit has matched your salary for ~6 months.** In the Base case that's somewhere around month 13–24, depending on your salary.
 - **You're consistently past ~25 hours a week**, or turning down demos because of your day job.
 - **Mid-size firms want to buy and need faster support** than a side business can promise.
 
@@ -112,7 +112,7 @@ At that point, switch to the full-time plan and its hiring triggers ([03](03-pri
 |---|---|---|
 | Your labor cost | $0/hour (you do the work) | `Assumptions!B23` (set ~$90 to see profit if you paid someone) |
 | Founder pay and hires | $0; hires never trigger | `Opex Plan` |
-| Scenario | Base (2 / 6 / 7 new clients by year) | `Assumptions!B4` (1 = Conservative, 3 = Upside) |
+| Scenario | Base (3 / 7 / 7 new clients by year) | `Assumptions!B4` (1 = Conservative, 3 = Upside) |
 | Year-1 discount | 50% (your first clients are design partners) | `Assumptions!B26` |
 | Partner resale | 0% | `Assumptions!B31` |
 

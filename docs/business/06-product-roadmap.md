@@ -93,39 +93,65 @@ Don't build commodity pieces. The value is in the vertical workflows, the securi
 
 ## 4. Roadmap
 
-Sized for one full-time engineer (the other founder sells). If the founders split their time between building and selling, add ~50%. The weeks match the 90-day plan in [05](05-go-to-market.md#10-first-90-days).
+### Build estimate
 
-### Phase 0 — Demo-ready (weeks 1–6)
+Bottom-up hours for an experienced developer using AI coding assistance and the open-source pieces in §3. The low end is for when things go smoothly; the high end allows for the usual surprises.
+
+| # | Piece | Hours |
+|---|---|---|
+| 1 | Fix the verified issues; config-driven endpoint; OpenAI-compatible client; JSON-schema structured output | 3–6 |
+| 2 | Serve a modern model (vLLM on client boxes, Ollama on the demo box) | 2–4 |
+| 3 | PDF, Word, and scan ingestion with page numbers (Docling's REST server, called from .NET) | 6–12 |
+| 4 | Chunking and map-reduce, with a page citation on every extracted field | 8–16 |
+| 5 | Web UI: upload → results with page links → approve/edit → Excel export | 12–24 |
+| 6 | Medical chronology v1: extract events per chunk, merge, de-duplicate, sort | 10–20 |
+| 7 | Synthetic records with known answers: generate the event list first, then write the records from it, so test labels come free | 6–12 |
+| 8 | Accuracy scoring and prompt iteration on the synthetic set | 8–16 |
+| 9 | Docker Compose, offline install bundle, demo-box setup | 6–12 |
+| | **Demo-ready** | **~60–120** |
+| 10 | Login through the firm's Active Directory/LDAP, roles, matter-level permissions | 8–16 |
+| 11 | Audit log and admin page | 8–14 |
+| 12 | Chat over documents: wire LibreChat or AnythingLLM to the same model | 6–12 |
+| 13 | Hardening: disk encryption, TLS, egress-deny test, signed update bundles | 10–20 |
+| 14 | Batch queue for large uploads | 4–8 |
+| | **Pilot-ready total** | **~100–190** |
+
+That's **~3–5 weeks full-time, or ~6–12 weeks at 15–20 hours a week.** A rough, single-machine demo (items 1–4, 6, and a bare-bones page) can come together in about a week of focused work.
+
+Coding speed doesn't shrink three things:
+- **Accuracy on real, messy records.** You only see those once pilots share documents. Budget ~6–12 hours of tuning per pilot; the setup fee covers it.
+- **Installer and security robustness** on real client networks.
+- **The sales cycle.** After the first month, the calendar is paced by demos and pilots, not by code.
+
+Weeks below follow the 90-day plan in [05](05-go-to-market.md#10-first-90-days) for a full-time builder. Part-time, roughly double them.
+
+### Phase 0 — Demo-ready (weeks 1–4)
 
 Goal: a 5-minute demo of the medical chronology that runs **with the network cable unplugged**, with accuracy measured before anyone sees it.
 
-- [ ] Fix issues 1–10 above
-- [ ] Config-driven model and endpoint; OpenAI-compatible client; a modern Apache-2.0 model
-- [ ] Structured-output JSON schemas per category
-- [ ] PDF and DOCX upload; OCR for scans
-- [ ] Chunking with map-reduce and page citations on every extracted field
-- [ ] Minimal web UI: upload → extracted fields with page links → approve/edit (review queue) → export to Excel
-- [ ] **Demo dataset built only from synthetic or public data.** Never real client data.
-  - Medical: [Synthea](https://github.com/synthetichealth/synthea) synthetic patient records (Apache-2.0)
+- [ ] Weeks 1–2: fix issues 1–10 above; config-driven model and endpoint; OpenAI-compatible client; a modern Apache-2.0 model
+- [ ] Weeks 1–2: structured-output JSON schemas per category; PDF and DOCX upload; OCR for scans
+- [ ] Weeks 1–2: chunking with map-reduce and page citations on every extracted field; minimal web UI (upload → extracted fields with page links → approve/edit → export to Excel)
+- [ ] Weeks 3–4: **demo dataset built only from synthetic or public data.** Never real client data.
+  - Medical: [Synthea](https://github.com/synthetichealth/synthea) synthetic patient records (Apache-2.0), or records generated from a known event list
   - Legal: [CUAD](https://www.atticusprojectai.org/cuad) commercial contracts with clause labels (CC BY 4.0)
   - Financial: synthetic W-2, 1099, and K-1 forms filled from public-domain IRS templates; synthetic bank statements and invoices
-- [ ] **Accuracy test set v1:** a small gold-labeled set per workflow, with field-level scores
-- [ ] **Medical chronology v1** (weeks 5–6): the beachhead workflow, measured on the test set
-- [ ] One-command start: `docker compose up` with models pre-pulled
+- [ ] Weeks 3–4: **accuracy test set v1** (a small gold-labeled set per workflow, with field-level scores)
+- [ ] Weeks 3–4: **medical chronology v1**, the beachhead workflow, measured on the test set
+- [ ] Weeks 3–4: one-command start (`docker compose up` with models pre-pulled) on the portable demo box
 
-### Phase 1 — Pilot-ready (weeks 7–13)
+### Phase 1 — Pilot-ready (weeks 5–8)
 
 Goal: install at 2–3 design-partner firms.
 
-- [ ] Weeks 7–8: portable demo box; offline bundle builder and installer (container images, model weights, checksum manifest, signed)
-- [ ] Weeks 7–9, **only if the CPA track is go**: W-2, 1099, and K-1 extraction into a review sheet
-- [ ] Weeks 9–10: auth (local accounts plus LDAP/AD), roles (admin, reviewer, user), and workspace/matter-level permissions
-- [ ] Weeks 9–10: append-only audit log (user, action, document hash, model and prompt versions, timestamp) and admin page (GPU health, queue depth, model version, disk, last update)
+- [ ] Weeks 5–6: auth (local accounts plus LDAP/AD), roles (admin, reviewer, user), and workspace/matter-level permissions
+- [ ] Weeks 5–6: append-only audit log (user, action, document hash, model and prompt versions, timestamp) and admin page (GPU health, queue depth, model version, disk, last update)
+- [ ] Weeks 5–6: offline bundle builder and installer (container images, model weights, checksum manifest, signed)
+- [ ] Weeks 5–7, **only if the CPA track is go**: W-2, 1099, and K-1 extraction into a review sheet
+- [ ] Weeks 7–8: chat over documents (RAG) with citations, via the borrowed UI above
+- [ ] Weeks 7–8: hardening (disk encryption, TLS with the client's internal CA, and an egress-deny firewall profile that proves the box works with no outbound traffic); batch queue for large uploads
 - [ ] **Before each pilot goes live:** run the accuracy check on the client's own sample documents and share the results
-- [ ] Weeks 11–13: chat over documents (RAG) with citations, via the borrowed UI above
-- [ ] Batch jobs and a queue for large uploads
-- [ ] Accuracy harness v2: regression check on every model upgrade
-- [ ] Hardening: disk encryption, TLS with the client's internal CA, and an egress-deny firewall profile that proves the box works with no outbound traffic
+- [ ] Weeks 9–13: pilot support; fix what pilots surface; accuracy harness v2 (regression check on every model upgrade)
 
 ### Phase 2 — Product-market fit (months 4–9)
 

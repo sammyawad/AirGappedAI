@@ -137,7 +137,7 @@ FAQ questions to answer on the page:
 - Analytics: privacy-friendly (Plausible or Fathom, ~$9–15/month). A privacy company shouldn't ship Google trackers on its own site.
 - **Clear the name before you build** (see [07](07-risks-and-compliance.md)).
 - Budget one to two weeks of founder time, or $2k–6k for a freelancer with a template.
-- **Launch v1 with only shipped features** (weeks 3–4: upload, extraction, citations). Hold login, audit-log, and chat claims ("normal work login", "full audit log", the FAQ answer on permissions) for v2, once they ship in weeks 9–13.
+- **Launch v1 with only shipped features** (weeks 3–4: upload, extraction, citations). Hold login, audit-log, and chat claims ("normal work login", "full audit log", the FAQ answer on permissions) for v2, once they ship in weeks 5–8.
 
 ---
 
@@ -244,7 +244,7 @@ Use the CRM template in [`prospect-list-template.csv`](prospect-list-template.cs
 
 ### Templates
 
-Fill every `{field}`. Personalize the first line; generic first lines get deleted. Every commercial email must include your **physical postal address** and an **opt-out line**. **Only mention features that have shipped:** drop "work logins" and "audit log" from these templates until weeks 9–10.
+Fill every `{field}`. Personalize the first line; generic first lines get deleted. Every commercial email must include your **physical postal address** and an **opt-out line**. **Only mention features that have shipped:** drop "work logins" and "audit log" from these templates until weeks 5–6.
 
 **Law firm, Email 1**
 
@@ -477,15 +477,14 @@ Built from 2026 price sources: [Stripe Atlas](https://stripe.com/atlas), [Insure
 
 ## 10. First 90 days
 
-This assumes one founder building full-time and one selling full-time. If you're splitting time, stretch it by ~50% ([06](06-product-roadmap.md#4-roadmap)). **Marketing shows only features that have shipped.**
+The build is ~100–190 hours ([06](06-product-roadmap.md#build-estimate)): about 3–5 weeks for a full-time builder, or 6–12 weeks part-time. After that, the calendar is paced by demos and pilots, not code. **Marketing shows only features that have shipped.**
 
 | Weeks | Product | Go-to-market |
 |---|---|---|
-| 1–2 | Fix verified bugs; config-driven models; structured outputs; swap in a modern model | Pick the new name and get a clearance opinion ([07](07-risks-and-compliance.md#1-the-name)); form the LLC; draft MSA, BAA, and pilot agreement; apply to NVIDIA Inception (free); start ~15 discovery calls (law firms, CPA firms, and 3–5 defense contractors or CMMC consultants) |
-| 3–4 | PDF/OCR upload; web UI with review queue; synthetic demo data; accuracy test set | Landing page v1 (shipped features only); build the first 300-prospect list; set up and warm the sending domain; **CPA go/no-go**: if a CPA firm commits as a design partner, schedule tax-form extraction for weeks 7–9, otherwise restart the CPA track after April 15 |
-| 5–6 | Medical chronology v1 with page citations, measured on the test set | Record the 2-minute video; warm-intro outreach to your network; approach 3 local MSPs |
-| 7–8 | Portable demo box; offline installer; tax-form extraction (only if CPA is go) | 10+ Unplugged Demos booked; pitch a CLE webinar to a local bar association; apply to ILTA Startup Hub and CPA.com Accelerator |
-| 9–10 | Login (LDAP/AD), audit log, admin page; accuracy check on each pilot's sample documents | Sign 2–3 design partners; start paid pilots once accuracy on their documents is measured (CPA pilots installed by mid-December) |
-| 11–13 | Chat over documents; fix what pilots surface | Landing page v2 adds login, audit-log, and chat claims; outreach at 20–40 new prospects a day per sender; capture time-savings data; defense go/no-go from the discovery calls |
+| 1–2 | Fix verified bugs; config-driven models; structured outputs; modern model; PDF/OCR upload; basic web UI with page citations | Pick the new name and get a clearance opinion ([07](07-risks-and-compliance.md#1-the-name)); form the LLC; draft MSA, BAA, and pilot agreement; apply to NVIDIA Inception (free); start ~15 discovery calls (law firms, CPA firms, and 3–5 defense contractors or CMMC consultants) |
+| 3–4 | Medical chronology v1 with page citations, measured on synthetic records with known answers; portable demo box | Landing page v1 (shipped features only); record the 2-minute video; build the first 300-prospect list; set up and warm the sending domain; **CPA go/no-go**: if a CPA firm commits as a design partner, build tax-form extraction in weeks 5–7, otherwise restart the CPA track after April 15 |
+| 5–6 | Login (LDAP/AD), audit log, admin page; offline installer; tax-form extraction (only if CPA is go) | Warm-intro outreach to your network; approach 3 local MSPs; 10+ Unplugged Demos booked |
+| 7–8 | Chat over documents; hardening; accuracy check on each pilot's sample documents | Sign 2–3 design partners; start paid pilots once accuracy on their documents is measured (CPA pilots installed by mid-December); pitch a CLE webinar to a local bar association; apply to ILTA Startup Hub and CPA.com Accelerator |
+| 9–13 | Pilot support; fix what pilots surface | Landing page v2 adds login, audit-log, and chat claims; outreach at 20–40 new prospects a day per sender; capture time-savings data; defense go/no-go from the discovery calls |
 
 **Target at day 90:** 2–3 design partners in paid pilots, 10+ qualified opportunities in pipeline, time-savings data being captured for the first case study, and clear go/no-go decisions on the CPA and defense tracks.

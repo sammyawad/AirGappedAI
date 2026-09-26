@@ -40,7 +40,7 @@ For comparison, cloud legal AI costs **$199–500 per user/month**, and Harvey r
 - **About 80% of that $287k (~$228k) is founder pay.** With no founder salaries, the business needs only **~$59k**, because clients pay for hardware in full on order and setup fees fund installs.
 - If 30% of clients come through IT-partner resellers at 25% off, the Base case needs ~$318k and breaks even in month 29 ([03](03-pricing-and-unit-economics.md#7-what-moves-the-numbers-base-case-sensitivities)).
 - **Upside:** $126k needed, $2.97M ARR. **Conservative:** $640k needed if you don't cut costs, which you should.
-- **As a side business** (one person, no salary): ~$23k in, profitable from month 10, and ~$140k then ~$317k pre-tax profit in Years 2–3 at ~19–25 hours a week in the Base case ([08](08-side-business.md)).
+- **As a side business** (one person, no salary): ~$15k in, profitable from month 7, and ~$199k then ~$361k pre-tax profit in Years 2–3 at ~22–27 hours a week in the Base case ([08](08-side-business.md)).
 
 **How to win with no reputation:**
 - **The Unplugged Demo.** Pull the network cable in the prospect's conference room and run their documents.
@@ -90,16 +90,15 @@ The design is the right starting point. The full assessment and roadmap are in [
 
 ## The next 90 days
 
-This assumes one founder building full-time and one selling full-time. If you're splitting time, stretch it by ~50%. **Marketing only ever shows features that have shipped.**
+The build itself is ~100–190 hours ([06](06-product-roadmap.md#build-estimate)): about 3–5 weeks full-time, or 6–12 weeks part-time. After that, the calendar is paced by demos and pilots, not code. **Marketing only ever shows features that have shipped.**
 
 | Weeks | Product | Go-to-market |
 |---|---|---|
-| 1–2 | Fix verified bugs; structured JSON output; config-driven models; modern model | New name and clearance; LLC; MSA, BAA, and pilot agreement; NVIDIA Inception; start ~15 discovery calls (law, CPA, and 3–5 defense contractors) |
-| 3–4 | PDF/OCR upload; web UI with review queue; synthetic demo data; accuracy test set | Landing page v1 (only shipped features); first 300 prospects; sending domain; **CPA go/no-go**: build tax forms only if a CPA design partner commits |
-| 5–6 | Medical chronology v1 with page citations, measured on the test set | Record the 2-minute video; warm intros; approach 3 local MSPs |
-| 7–8 | Portable demo box; offline installer; tax-form extraction (only if CPA is go) | 10+ Unplugged Demos; CLE webinar pitch; ILTA and CPA.com applications |
-| 9–10 | Login (LDAP/AD), audit log, admin page; accuracy check on each pilot's sample documents | Sign 2–3 design partners; pilots start once accuracy on their documents is measured |
-| 11–13 | Chat over documents; fix pilot feedback | Landing page v2 adds login and audit-log claims; steady outreach; capture time-savings data; defense go/no-go |
+| 1–2 | Fix verified bugs; structured output; modern model; PDF/OCR upload; basic web UI with page citations | New name and clearance; LLC; MSA, BAA, and pilot agreement; NVIDIA Inception; start ~15 discovery calls (law, CPA, and 3–5 defense contractors) |
+| 3–4 | Medical chronology v1; synthetic records and accuracy test set; demo box | Landing page v1 (only shipped features); 2-minute video; first 300 prospects; sending domain; **CPA go/no-go**: build tax forms only if a CPA design partner commits |
+| 5–6 | Login (LDAP/AD), audit log, admin page; offline installer; tax-form extraction (only if CPA is go) | Warm intros; 3 local MSPs; 10+ Unplugged Demos |
+| 7–8 | Chat over documents; hardening; accuracy check on each pilot's sample documents | Sign 2–3 design partners; start paid pilots; CLE webinar pitch; ILTA and CPA.com applications |
+| 9–13 | Pilot support; fix what pilots surface | Landing page v2 adds login, audit-log, and chat claims; steady outreach; capture time-savings data; defense go/no-go |
 
 Details in [05 §10](05-go-to-market.md#10-first-90-days) and [06 §4](06-product-roadmap.md#4-roadmap).
 
